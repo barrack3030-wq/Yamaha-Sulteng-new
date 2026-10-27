@@ -15,7 +15,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBlog }) => {
           <div className="lg:col-span-4 space-y-4">
             <div className="flex items-center gap-2.5 text-white font-bold text-lg">
               <img
-                src="/assets/aistudio/Yamaha-Logo_70519f9d.png"
+                src={`${import.meta.env.BASE_URL}assets/aistudio/Yamaha-Logo_70519f9d.png`}
                 alt="Logo Yamaha Motor"
                 className="h-8 sm:h-9 w-auto object-contain"
               />
