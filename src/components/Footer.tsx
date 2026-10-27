@@ -1,0 +1,148 @@
+import React from 'react';
+import { MessageSquareQuote, Phone, MapPin, Check, Shield } from 'lucide-react';
+
+export const Footer: React.FC = () => {
+  return (
+    <footer id="kontak" className="bg-slate-950 text-slate-300 pt-16 pb-12 border-t border-slate-900">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Main Footer Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-slate-800">
+          {/* Column 1: Brand & Identity */}
+          <div className="lg:col-span-4 space-y-4">
+            <div className="flex items-center gap-2.5 text-white font-bold text-lg">
+              <img
+                src="/assets/aistudio/Yamaha-Logo_70519f9d.png"
+                alt="Logo Yamaha Motor"
+                className="h-8 sm:h-9 w-auto object-contain"
+              />
+              <span className="tracking-tight text-lg">
+                <span className="font-extrabold text-white">YAMAHA</span>{' '}
+                <span className="font-black text-blue-400">SULTENG</span>
+              </span>
+            </div>
+
+            <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
+              Layanan konsultasi penjualan, pemesanan unit baru, dan fasilitas kredit motor Yamaha untuk wilayah <strong className="text-white font-semibold">Toili</strong>, <strong className="text-white font-semibold">Luwuk</strong>, dan <strong className="text-white font-semibold">Morowali</strong>, Sulawesi Tengah.
+            </p>
+
+            <div className="text-xs text-slate-400 space-y-1 pt-1">
+              <div>Konsultan Marketing: <span className="text-white font-medium">Mas Aji</span></div>
+              <div>WhatsApp / Telepon: <a href="https://wa.me/6285820830530" className="text-blue-400 hover:underline">0858-2083-0530</a></div>
+              <div>Layanan Pengantaran: Langsung ke alamat pembeli</div>
+            </div>
+          </div>
+
+          {/* Column 2: Navigation Links */}
+          <div className="lg:col-span-2 space-y-3">
+            <h4 className="text-xs font-bold text-white uppercase tracking-wider">
+              Navigasi Halaman
+            </h4>
+            <ul className="space-y-2 text-xs sm:text-sm">
+              <li>
+                <a href="#beranda" className="hover:text-white transition-colors">
+                  Beranda
+                </a>
+              </li>
+              <li>
+                <a href="#promo" className="hover:text-white transition-colors">
+                  Bagan Promo
+                </a>
+              </li>
+              <li>
+                <a href="#pilihan-motor" className="hover:text-white transition-colors">
+                  Pilihan Motor
+                </a>
+              </li>
+              <li>
+                <a href="#simulasi-kredit" className="hover:text-white transition-colors">
+                  Simulasi Kredit
+                </a>
+              </li>
+              <li>
+                <a href="#blog" className="hover:text-white transition-colors">
+                  Blog &amp; Panduan
+                </a>
+              </li>
+              <li>
+                <a href="#kontak-cta" className="hover:text-white transition-colors">
+                  Area &amp; Kontak Pemesanan
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 3: Area Jangkauan Lokal SEO */}
+          <div className="lg:col-span-3 space-y-3">
+            <h4 className="text-xs font-bold text-white uppercase tracking-wider">
+              Cakupan Wilayah Pengiriman
+            </h4>
+            <ul className="space-y-2 text-xs text-slate-400">
+              <li className="flex items-start gap-2">
+                <MapPin className="w-3.5 h-3.5 text-blue-400 shrink-0 mt-0.5" />
+                <span>
+                  <strong className="text-slate-200">Toili &amp; Moilong:</strong> Toili Barat, Sentral, Mansahang, Marga Kencana, Argakencana.
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <MapPin className="w-3.5 h-3.5 text-blue-400 shrink-0 mt-0.5" />
+                <span>
+                  <strong className="text-slate-200">Kota Luwuk:</strong> Luwuk Selatan, Luwuk Utara, Kintom, Nambo, Batui.
+                </span>
+              </li>
+              <li className="flex items-start gap-2">
+                <MapPin className="w-3.5 h-3.5 text-blue-400 shrink-0 mt-0.5" />
+                <span>
+                  <strong className="text-slate-200">Morowali:</strong> Bahodopi (Fatufia, Labota, Keurea), Bungku Tengah, Bungku Barat.
+                </span>
+              </li>
+            </ul>
+          </div>
+
+          {/* Column 4: WhatsApp Direct Card */}
+          <div className="lg:col-span-3 bg-slate-900/90 rounded-xl p-5 border border-slate-800 space-y-4">
+            <div>
+              <span className="text-[11px] font-semibold text-blue-400 uppercase tracking-wider block">
+                Konsultasi WhatsApp
+              </span>
+              <h5 className="text-sm font-bold text-white mt-0.5">
+                Mas Aji (0858 2083 0530)
+              </h5>
+              <p className="text-xs text-slate-400 mt-1">
+                Tanyakan simulasi uang muka, cicilan, dan ketersediaan warna motor hari ini.
+              </p>
+            </div>
+
+            <a
+              href="https://wa.me/6285820830530?text=Halo%20Mas%20Aji,%20saya%20ingin%20konsultasi%20pembelian%20motor%20Yamaha."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-semibold text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-800 rounded-lg transition-colors"
+            >
+              <MessageSquareQuote className="w-4 h-4" />
+              <span>Buka WhatsApp Sekarang</span>
+            </a>
+          </div>
+        </div>
+
+        {/* Disclaimer & Transparency Bar */}
+        <div className="py-6 border-b border-slate-800/80 text-[11px] text-slate-500 leading-relaxed">
+          <p>
+            <strong className="text-slate-400">Pemberitahuan &amp; Transparansi:</strong> Website ini merupakan sarana informasi, edukasi spesifikasi, dan jalur konsultasi pemasaran independen yang dikelola oleh Mas Aji untuk memudahkan calon pembeli motor Yamaha di wilayah Toili, Luwuk, dan Morowali (Sulawesi Tengah). Seluruh transaksi pembiayaan kredit diproses melalui lembaga leasing resmi terdaftar OJK (BAF, Adira, FIF, dll.), dan unit motor dikirimkan langsung dengan kondisi baru lengkap dengan surat-surat resmi kendaraan.
+          </p>
+        </div>
+
+        {/* Bottom Bar: Copyright & Static SEO Anchors */}
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+          <div>
+            &copy; {new Date().getFullYear()} Yamaha Motor Toili, Luwuk &amp; Morowali · Layanan Mas Aji.
+          </div>
+          <div className="flex items-center gap-4 text-[11px]">
+            <span>Sulawesi Tengah, Indonesia</span>
+            <span aria-hidden="true" className="text-slate-700">·</span>
+            <a href="https://wa.me/6285820830530" className="hover:text-slate-300">Hubungi 0858-2083-0530</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  );
+};

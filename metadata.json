@@ -1,0 +1,6 @@
+{
+  "name": "Yamaha Motor Toili Luwuk Morowali",
+  "description": "Website informasi penjualan, katalog produk, dan konsultasi kredit motor Yamaha terpercaya untuk wilayah Toili, Luwuk, dan Morowali, Sulawesi Tengah bersama Mas Aji.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
