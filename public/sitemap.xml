@@ -3,5 +3,25 @@
   <url>
     <loc>https://barrack3030-wq.github.io/Yamaha-Sulteng-new/</loc>
     <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://barrack3030-wq.github.io/Yamaha-Sulteng-new/area/toili/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://barrack3030-wq.github.io/Yamaha-Sulteng-new/area/luwuk/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://barrack3030-wq.github.io/Yamaha-Sulteng-new/area/morowali/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
   </url>
 </urlset>
