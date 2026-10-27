@@ -40,7 +40,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBlog }) => {
             className="flex items-center gap-3 text-slate-950 whitespace-nowrap shrink-0 group"
           >
             <img
-              src="/assets/aistudio/Yamaha-Logo_70519f9d.png"
+              src={`${import.meta.env.BASE_URL}assets/aistudio/Yamaha-Logo_70519f9d.png`}
               alt="Logo Resmi Yamaha Motor"
               className="h-9 sm:h-10 w-auto object-contain transition-transform group-hover:scale-105"
             />
