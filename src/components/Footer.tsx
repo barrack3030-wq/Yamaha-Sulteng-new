@@ -1,13 +1,17 @@
 import React from 'react';
-import { MessageSquareQuote, Phone, MapPin, Check, Shield } from 'lucide-react';
+import { MessageSquareQuote, MapPin, Facebook, Phone, Clock, Shield } from 'lucide-react';
 
-export const Footer: React.FC = () => {
+interface FooterProps {
+  onOpenBlog?: () => void;
+}
+
+export const Footer: React.FC<FooterProps> = ({ onOpenBlog }) => {
   return (
     <footer id="kontak" className="bg-slate-950 text-slate-300 pt-16 pb-12 border-t border-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-10 pb-12 border-b border-slate-800">
-          {/* Column 1: Brand & Identity */}
+          {/* Column 1: Brand & Contact Info */}
           <div className="lg:col-span-4 space-y-4">
             <div className="flex items-center gap-2.5 text-white font-bold text-lg">
               <img
@@ -25,10 +29,42 @@ export const Footer: React.FC = () => {
               Layanan konsultasi penjualan, pemesanan unit baru, dan fasilitas kredit motor Yamaha untuk wilayah <strong className="text-white font-semibold">Toili</strong>, <strong className="text-white font-semibold">Luwuk</strong>, dan <strong className="text-white font-semibold">Morowali</strong>, Sulawesi Tengah.
             </p>
 
-            <div className="text-xs text-slate-400 space-y-1 pt-1">
-              <div>Konsultan Marketing: <span className="text-white font-medium">Mas Aji</span></div>
-              <div>WhatsApp / Telepon: <a href="https://wa.me/6285820830530" className="text-blue-400 hover:underline">0858-2083-0530</a></div>
-              <div>Layanan Pengantaran: Langsung ke alamat pembeli</div>
+            {/* Office Address */}
+            <div className="pt-2 border-t border-slate-800/80 space-y-2 text-xs">
+              <div className="flex items-start gap-2.5 text-slate-300">
+                <MapPin className="w-4 h-4 text-red-500 shrink-0 mt-0.5" />
+                <div>
+                  <strong className="text-white block font-semibold mb-0.5">Alamat Kantor:</strong>
+                  <span>Jl. Trans Sulawesi (Sebelah Kantor Desa Singkoyo), Desa Singkoyo, Kec. Toili, Kab. Banggai, Sulawesi Tengah 94765</span>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-2.5 text-slate-300 pt-1">
+                <Phone className="w-4 h-4 text-blue-400 shrink-0" />
+                <div>
+                  <span className="text-slate-400">Konsultan Marketing: </span>
+                  <strong className="text-white">Mas Aji</strong> ·{' '}
+                  <a href="https://wa.me/6285820830530" className="text-blue-400 hover:underline">
+                    0858-2083-0530
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            {/* Social Media Link: Facebook */}
+            <div className="pt-2">
+              <a
+                href="https://www.facebook.com/share/1CBunSxP7G/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2.5 px-3.5 py-2 bg-[#1877F2]/15 hover:bg-[#1877F2]/25 text-[#1877F2] border border-[#1877F2]/30 rounded-lg text-xs font-bold transition-colors"
+                aria-label="Kunjungi Halaman Facebook Resmi"
+              >
+                <div className="w-5 h-5 rounded-full bg-[#1877F2] text-white flex items-center justify-center shrink-0">
+                  <Facebook className="w-3.5 h-3.5 fill-current" />
+                </div>
+                <span className="text-white">Ikuti Kami di Facebook</span>
+              </a>
             </div>
           </div>
 
@@ -59,9 +95,19 @@ export const Footer: React.FC = () => {
                 </a>
               </li>
               <li>
-                <a href="#blog" className="hover:text-white transition-colors">
-                  Blog &amp; Panduan
-                </a>
+                {onOpenBlog ? (
+                  <button
+                    type="button"
+                    onClick={onOpenBlog}
+                    className="hover:text-white transition-colors text-left"
+                  >
+                    Blog &amp; Panduan
+                  </button>
+                ) : (
+                  <a href="#blog" className="hover:text-white transition-colors">
+                    Blog &amp; Panduan
+                  </a>
+                )}
               </li>
               <li>
                 <a href="#kontak-cta" className="hover:text-white transition-colors">
@@ -80,7 +126,7 @@ export const Footer: React.FC = () => {
               <li className="flex items-start gap-2">
                 <MapPin className="w-3.5 h-3.5 text-blue-400 shrink-0 mt-0.5" />
                 <span>
-                  <strong className="text-slate-200">Toili &amp; Moilong:</strong> Toili Barat, Sentral, Mansahang, Marga Kencana, Argakencana.
+                  <strong className="text-slate-200">Toili &amp; Moilong:</strong> Singkoyo, Toili Barat, Sentral, Mansahang, Marga Kencana, Argakencana.
                 </span>
               </li>
               <li className="flex items-start gap-2">
@@ -137,9 +183,9 @@ export const Footer: React.FC = () => {
             &copy; {new Date().getFullYear()} Yamaha Motor Toili, Luwuk &amp; Morowali · Layanan Mas Aji.
           </div>
           <div className="flex items-center gap-4 text-[11px]">
-            <span>Sulawesi Tengah, Indonesia</span>
+            <span>Desa Singkoyo, Toili, Banggai, Sulteng</span>
             <span aria-hidden="true" className="text-slate-700">·</span>
-            <a href="https://wa.me/6285820830530" className="hover:text-slate-300">Hubungi 0858-2083-0530</a>
+            <a href="https://wa.me/6285820830530" className="hover:text-slate-300">0858-2083-0530</a>
           </div>
         </div>
       </div>

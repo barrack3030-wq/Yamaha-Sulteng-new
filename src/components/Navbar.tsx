@@ -3,9 +3,10 @@ import { Menu, X, MessageSquareQuote } from 'lucide-react';
 
 interface NavbarProps {
   onSelectNav?: (target: string) => void;
+  onOpenBlog?: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = () => {
+export const Navbar: React.FC<NavbarProps> = ({ onOpenBlog }) => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
@@ -17,8 +18,12 @@ export const Navbar: React.FC<NavbarProps> = () => {
     { label: 'Kontak & Area', href: '#kontak-cta' },
   ];
 
-  const handleNavClick = (href: string) => {
+  const handleNavClick = (href: string, label: string) => {
     setMobileMenuOpen(false);
+    if (label === 'Blog' && onOpenBlog) {
+      onOpenBlog();
+      return;
+    }
     const element = document.querySelector(href);
     if (element) {
       element.scrollIntoView({ behavior: 'smooth' });
@@ -53,7 +58,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
                 href={link.href}
                 onClick={(e) => {
                   e.preventDefault();
-                  handleNavClick(link.href);
+                  handleNavClick(link.href, link.label);
                 }}
                 className="hover:text-blue-700 transition-colors whitespace-nowrap shrink-0 hover:underline underline-offset-8"
               >
@@ -99,7 +104,7 @@ export const Navbar: React.FC<NavbarProps> = () => {
               href={link.href}
               onClick={(e) => {
                 e.preventDefault();
-                handleNavClick(link.href);
+                handleNavClick(link.href, link.label);
               }}
               className="block px-3 py-2.5 text-base font-medium text-slate-700 hover:text-blue-700 hover:bg-blue-50/50 rounded-md"
             >

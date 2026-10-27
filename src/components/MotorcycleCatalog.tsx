@@ -1,23 +1,31 @@
 import React, { useState } from 'react';
 import { MOTORCYCLES } from '../data/motorcycles';
 import { Motorcycle } from '../types';
-import { MessageSquareQuote, Info, X, Check, Fuel, Gauge, Sliders, Shield, Search } from 'lucide-react';
+import { MessageSquareQuote, Info, X, Check, Gauge, Sliders, Search, ChevronDown, ChevronUp } from 'lucide-react';
 
 export const MotorcycleCatalog: React.FC = () => {
+  const [showAllMotors, setShowAllMotors] = useState<boolean>(false);
   const [selectedCategory, setSelectedCategory] = useState<string>('Semua');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [activeModalMotor, setActiveModalMotor] = useState<Motorcycle | null>(null);
 
   const categories = ['Semua', 'Maxi Series', 'Classy Series', 'Sport & Adventure', 'Matic Praktis'];
 
-  const filteredMotors = MOTORCYCLES.filter((motor) => {
-    const matchesCategory = selectedCategory === 'Semua' || motor.series === selectedCategory;
-    const matchesSearch =
-      motor.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      motor.tagline.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      motor.features.some((f) => f.toLowerCase().includes(searchQuery.toLowerCase()));
-    return matchesCategory && matchesSearch;
-  });
+  // If showAllMotors is false and no search active, only show NMAX and Fazzio
+  const displayedMotors = React.useMemo(() => {
+    if (!showAllMotors && searchQuery.trim() === '' && selectedCategory === 'Semua') {
+      return MOTORCYCLES.filter((m) => m.id === 'nmax-turbo' || m.id === 'fazzio-hybrid');
+    }
+
+    return MOTORCYCLES.filter((motor) => {
+      const matchesCategory = selectedCategory === 'Semua' || motor.series === selectedCategory;
+      const matchesSearch =
+        motor.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        motor.tagline.toLowerCase().includes(searchQuery.toLowerCase()) ||
+        motor.features.some((f) => f.toLowerCase().includes(searchQuery.toLowerCase()));
+      return matchesCategory && matchesSearch;
+    });
+  }, [showAllMotors, searchQuery, selectedCategory]);
 
   const getWaLinkForMotor = (motorName: string, region: string = 'Luwuk / Toili / Morowali') => {
     const message = `Halo Mas Aji, saya tertarik dengan ${motorName}. Mohon info harga OTR terbaru, promo diskon/DP, dan ketersediaan warna untuk wilayah ${region}.`;
@@ -37,44 +45,54 @@ export const MotorcycleCatalog: React.FC = () => {
               Pilihan Motor Yamaha
             </h2>
             <p className="mt-2 text-sm sm:text-base text-slate-600 max-w-2xl">
-              Pilihan motor matic premium, skutik retro hybrid, hingga motor trail adventure dengan mesin Blue Core VVA teruji hemat dan bertenaga.
+              Model unggulan paling diminati dengan mesin Blue Core VVA teruji hemat bahan bakar, bertenaga, dan bergaransi resmi.
             </p>
           </div>
 
-          {/* Search Box */}
-          <div className="relative w-full md:w-72">
-            <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
-            <input
-              type="text"
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Cari NMAX, Aerox, WR 155..."
-              className="w-full pl-9 pr-4 py-2 text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white transition-all text-slate-900 placeholder:text-slate-400"
-            />
+          {/* Search Box - visible when showing all or on demand */}
+          {showAllMotors && (
+            <div className="relative w-full md:w-72">
+              <Search className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-slate-400" />
+              <input
+                type="text"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                placeholder="Cari Aerox, WR 155, Filano..."
+                className="w-full pl-9 pr-4 py-2 text-sm bg-slate-50 border border-slate-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:bg-white transition-all text-slate-900 placeholder:text-slate-400"
+              />
+            </div>
+          )}
+        </div>
+
+        {/* Category Tabs - shown when expanded */}
+        {showAllMotors && (
+          <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-8 scrollbar-none animate-in fade-in duration-200">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                type="button"
+                onClick={() => setSelectedCategory(cat)}
+                className={`px-4 py-2 text-xs sm:text-sm font-semibold rounded-lg transition-all whitespace-nowrap shrink-0 ${
+                  selectedCategory === cat
+                    ? 'bg-blue-700 text-white shadow-xs'
+                    : 'bg-slate-100 text-slate-700 hover:bg-slate-200 hover:text-slate-900'
+                }`}
+              >
+                {cat}
+              </button>
+            ))}
           </div>
-        </div>
+        )}
 
-        {/* Category Tabs */}
-        <div className="flex items-center gap-2 overflow-x-auto pb-4 mb-8 scrollbar-none">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              type="button"
-              onClick={() => setSelectedCategory(cat)}
-              className={`px-4 py-2 text-xs sm:text-sm font-semibold rounded-lg transition-all whitespace-nowrap shrink-0 ${
-                selectedCategory === cat
-                  ? 'bg-blue-700 text-white shadow-xs'
-                  : 'bg-slate-100 text-slate-700 hover:bg-slate-200 hover:text-slate-900'
-              }`}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
-
-        {/* Product Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {filteredMotors.map((motor) => (
+        {/* Product Cards Grid: 2 columns when default, 3 columns when expanded */}
+        <div
+          className={`grid gap-6 sm:gap-8 ${
+            !showAllMotors && searchQuery.trim() === '' && selectedCategory === 'Semua'
+              ? 'grid-cols-1 md:grid-cols-2 max-w-4xl mx-auto'
+              : 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3'
+          }`}
+        >
+          {displayedMotors.map((motor) => (
             <div
               key={motor.id}
               className="bg-white rounded-xl border border-slate-200 hover:border-slate-300 shadow-sm hover:shadow-md transition-all flex flex-col justify-between overflow-hidden group"
@@ -99,7 +117,6 @@ export const MotorcycleCatalog: React.FC = () => {
                 {/* Content */}
                 <div className="p-5 sm:p-6 space-y-4">
                   <div>
-                    {/* Clean unboxed series metadata */}
                     <div className="text-xs font-semibold text-blue-700 uppercase tracking-wider mb-1">
                       {motor.series}
                     </div>
@@ -158,25 +175,35 @@ export const MotorcycleCatalog: React.FC = () => {
           ))}
         </div>
 
-        {filteredMotors.length === 0 && (
-          <div className="text-center py-12 bg-slate-50 rounded-xl border border-slate-200">
-            <p className="text-base font-semibold text-slate-800">Motor tidak ditemukan</p>
-            <p className="text-sm text-slate-500 mt-1">Coba gunakan kata kunci lain seperti NMAX, Aerox, atau Fazzio.</p>
+        {/* Button: Lihat Motor Lainnya */}
+        <div className="mt-10 text-center">
+          {!showAllMotors ? (
+            <button
+              type="button"
+              onClick={() => setShowAllMotors(true)}
+              className="inline-flex items-center justify-center gap-2.5 px-7 py-3.5 bg-slate-900 hover:bg-slate-800 text-white font-bold text-sm rounded-xl transition-all shadow-sm hover:shadow-md group"
+            >
+              <span>Lihat Motor Lainnya (Aerox, WR 155 R, Filano, Gear)</span>
+              <ChevronDown className="w-4 h-4 text-blue-400 group-hover:translate-y-0.5 transition-transform" />
+            </button>
+          ) : (
             <button
               type="button"
               onClick={() => {
+                setShowAllMotors(false);
                 setSelectedCategory('Semua');
                 setSearchQuery('');
               }}
-              className="mt-4 px-4 py-2 text-xs font-semibold text-blue-700 bg-white border border-slate-300 rounded-lg hover:bg-slate-50"
+              className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-slate-100 hover:bg-slate-200 text-slate-700 font-semibold text-xs rounded-lg transition-all"
             >
-              Reset Filter
+              <ChevronUp className="w-4 h-4" />
+              <span>Tampilkan Hanya NMAX &amp; Fazzio</span>
             </button>
-          </div>
-        )}
+          )}
+        </div>
 
         {/* Pricing notice box */}
-        <div className="mt-12 bg-blue-50/60 border border-blue-200/80 rounded-xl p-5 text-xs text-slate-700 leading-relaxed flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div className="mt-10 bg-blue-50/60 border border-blue-200/80 rounded-xl p-5 text-xs text-slate-700 leading-relaxed flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
           <div>
             <span className="font-bold text-blue-950 block text-sm mb-0.5">
               Catatan Resmi Harga &amp; Promo On The Road (OTR)
