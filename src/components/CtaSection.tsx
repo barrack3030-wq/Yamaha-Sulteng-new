@@ -41,11 +41,8 @@ export const CtaSection: React.FC = () => {
         {/* 3 Region Selection Buttons */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-5 max-w-5xl mx-auto mb-10">
           {regions.map((reg) => (
-            <a
+            <div
               key={reg.name}
-              href={`https://wa.me/6285820830530?text=${encodeURIComponent(reg.message)}`}
-              target="_blank"
-              rel="noopener noreferrer"
               className="bg-slate-800/90 hover:bg-slate-800 border border-slate-700/80 hover:border-blue-500 rounded-xl p-5 sm:p-6 transition-all duration-200 group flex flex-col justify-between"
             >
               <div>
@@ -68,10 +65,15 @@ export const CtaSection: React.FC = () => {
                 >
                   Info layanan wilayah
                 </a>
-                <span className="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-blue-600 group-hover:bg-blue-700 text-white rounded-lg text-xs font-bold transition-colors">
+                <a
+                  href={`https://wa.me/6285820830530?text=${encodeURIComponent(reg.message)}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-blue-600 hover:bg-blue-700 text-white rounded-lg text-xs font-bold transition-colors"
+                >
                   <MessageSquareQuote className="w-4 h-4 shrink-0" />
                   Buka WhatsApp {reg.name.split(' ')[0]}
-                </span>
+                </div>
               </div>
             </a>
           ))}
