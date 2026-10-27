@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://ais-pre-wajrlpmuffys3sm7luqbiq-738345464490.asia-southeast1.run.app/sitemap.xml
+Sitemap: https://barrack3030-wq.github.io/Yamaha-Sulteng-new/sitemap.xml
