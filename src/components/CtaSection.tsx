@@ -5,16 +5,19 @@ export const CtaSection: React.FC = () => {
   const regions = [
     {
       name: 'Toili & Moilong',
+      areaPath: 'area/toili/',
       desc: 'Pengantaran langsung ke alamat rumah & berkas dibantu sampai disetujui.',
       message: 'Halo Mas Aji, saya di wilayah Toili / Moilong. Saya ingin konsultasi harga OTR dan pemesanan motor Yamaha.'
     },
     {
       name: 'Kota Luwuk',
+      areaPath: 'area/luwuk/',
       desc: 'Proses survey kilat, prioritas unit, serta plat & STNK diantar langsung.',
       message: 'Halo Mas Aji, saya di Luwuk. Saya mau menanyakan harga OTR terbaru dan promo angsuran motor Yamaha.'
     },
     {
       name: 'Morowali & Bahodopi',
+      areaPath: 'area/morowali/',
       desc: 'Siap kirim unit ke alamat Anda & kemudahan proses pengajuan kredit.',
       message: 'Halo Mas Aji, saya di Morowali (Bahodopi/Bungku). Mau tanya syarat kredit dan jadwal kirim unit motor Yamaha.'
     }
@@ -58,9 +61,17 @@ export const CtaSection: React.FC = () => {
                 </p>
               </div>
 
-              <div className="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-blue-600 group-hover:bg-blue-700 text-white rounded-lg text-xs font-bold transition-colors">
-                <MessageSquareQuote className="w-4 h-4 shrink-0" />
-                <span>Buka WhatsApp {reg.name.split(' ')[0]}</span>
+              <div className="mt-4 grid grid-cols-1 gap-2">
+                <a
+                  href={`${import.meta.env.BASE_URL}${reg.areaPath}`}
+                  className="inline-flex items-center justify-center w-full py-2 px-3 border border-slate-600 text-slate-100 hover:bg-slate-700 rounded-lg text-xs font-bold transition-colors"
+                >
+                  Info layanan wilayah
+                </a>
+                <span className="inline-flex items-center justify-center gap-2 w-full py-2.5 px-4 bg-blue-600 group-hover:bg-blue-700 text-white rounded-lg text-xs font-bold transition-colors">
+                  <MessageSquareQuote className="w-4 h-4 shrink-0" />
+                  Buka WhatsApp {reg.name.split(' ')[0]}
+                </span>
               </div>
             </a>
           ))}
