@@ -73,9 +73,9 @@ export const CtaSection: React.FC = () => {
                 >
                   <MessageSquareQuote className="w-4 h-4 shrink-0" />
                   Buka WhatsApp {reg.name.split(' ')[0]}
-                </div>
+                </a>
               </div>
-            </a>
+            </div>
           ))}
         </div>
 
