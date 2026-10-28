@@ -49,5 +49,15 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: '5 menit baca',
     targetRegion: 'Toili',
     excerpt: 'Panduan memeriksa harga tunai, DP, cicilan, total pembayaran, promo, dan ketersediaan unit motor Yamaha untuk pembeli di Toili.'
+  },
+  {
+    id: 'blog-5',
+    slug: 'yamaha-gear-ultima-toili',
+    title: 'Yamaha GEAR ULTIMA di Toili: Fitur yang Perlu Dicek Sebelum Membeli',
+    category: 'Panduan Model',
+    date: '29 Oktober 2026',
+    readTime: '6 menit baca',
+    targetRegion: 'Toili',
+    excerpt: 'Kenali varian, fitur, kenyamanan, dan biaya kepemilikan Yamaha GEAR ULTIMA sebelum meminta penawaran untuk wilayah Toili.'
   }
 ];
