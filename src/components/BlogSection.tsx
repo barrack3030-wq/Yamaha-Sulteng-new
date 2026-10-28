@@ -51,7 +51,7 @@ export const BlogSection: React.FC = () => {
                 </span>
 
                 <a
-                  href={`/Yamaha-Sulteng-new/blog/${post.slug}/`}
+                  href={`/blog/${post.slug}/`}
                   className="inline-flex items-center gap-1 text-xs font-bold text-blue-700 group-hover:text-blue-800 transition-colors"
                 >
                   <span>Baca Artikel Lengkap</span>
@@ -81,7 +81,7 @@ export const BlogSection: React.FC = () => {
               <p className="mt-2 text-sm text-slate-600 leading-relaxed">
                 Pelajari fitur praktis, perbedaan varian, dan hal yang perlu ditanyakan sebelum membeli Gear Ultima.
               </p>
-              <a href="/Yamaha-Sulteng-new/motor-yamaha-gear-ultima-sulteng/"
+              <a href="/motor-yamaha-gear-ultima-sulteng/"
                 className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-blue-700 hover:text-blue-800">
                 Panduan Gear Ultima <ChevronRight className="w-4 h-4" />
               </a>
@@ -91,7 +91,7 @@ export const BlogSection: React.FC = () => {
               <p className="mt-2 text-sm text-slate-600 leading-relaxed">
                 Kenali pilihan varian dan fitur Fazzio, serta cara meminta penawaran harga dan angsuran yang sesuai.
               </p>
-              <a href="/Yamaha-Sulteng-new/motor-yamaha-fazzio-sulteng/"
+              <a href="/motor-yamaha-fazzio-sulteng/"
                 className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-blue-700 hover:text-blue-800">
                 Panduan Fazzio <ChevronRight className="w-4 h-4" />
               </a>
