@@ -1,0 +1,38 @@
+/* Yamaha Sulteng editorial blog design system */
+:root{--ys-ink:#10284d;--ys-navy:#082b55;--ys-blue:#0866d8;--ys-sky:#eaf5ff;--ys-muted:#60718a;--ys-line:#e2eaf3;--ys-paper:#fff;--ys-bg:#f6f9fd}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--ys-bg);color:var(--ys-ink);font:16px/1.75 "Plus Jakarta Sans",Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+body>header{position:sticky;top:0;z-index:20;display:flex;align-items:center;justify-content:space-between;gap:18px;padding:16px max(22px,calc((100vw - 1200px)/2));background:rgba(255,255,255,.96);border-bottom:1px solid var(--ys-line);box-shadow:0 4px 24px rgba(16,40,77,.04);color:var(--ys-ink)}
+body>header a{color:var(--ys-ink);text-decoration:none;font-weight:850;letter-spacing:.025em}
+body>header a:hover{color:var(--ys-blue)}
+.wrap{max-width:1200px;margin:0 auto;padding:42px 24px 76px}
+.eyebrow,.meta{font-size:.74rem;color:var(--ys-blue);font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+h1,h2,h3{color:var(--ys-navy);letter-spacing:-.035em}
+h1{font-size:clamp(2.2rem,5vw,4rem);line-height:1.08;margin:.55rem 0 1.15rem;max-width:950px}
+h2{font-size:clamp(1.35rem,2.5vw,2rem);line-height:1.2;margin:2.1rem 0 .7rem}
+p,li{color:#52657e}
+a{transition:color .18s ease,background .18s ease}
+a:focus-visible{outline:3px solid #f3b322;outline-offset:4px}
+.intro{max-width:800px;font-size:1.12rem;line-height:1.8;color:#52657e}
+.article-byline{display:flex;align-items:center;flex-wrap:wrap;gap:12px 20px;margin:22px 0 30px;padding:17px 0;border-top:1px solid var(--ys-line);border-bottom:1px solid var(--ys-line);color:var(--ys-muted);font-size:.84rem}
+.article-byline strong{color:var(--ys-navy)}
+.article-byline .author-avatar{display:grid;place-items:center;width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#d8edff,#9bc9fa);color:var(--ys-navy);font-weight:900}
+.article-layout{display:grid;grid-template-columns:minmax(0,1fr) 310px;gap:42px;align-items:start}
+.article-content{min-width:0;background:#fff;border:1px solid var(--ys-line);border-radius:20px;padding:clamp(22px,4vw,48px);box-shadow:0 14px 45px rgba(16,40,77,.045)}
+.article-content h2{margin-top:2.2rem}
+.article-content p{font-size:1rem;line-height:1.9}
+.article-content a,.article-link{color:var(--ys-blue);font-weight:750}
+.article-sidebar{position:sticky;top:100px;display:grid;gap:20px}
+.sidebar-card{padding:22px;background:#fff;border:1px solid var(--ys-line);border-radius:16px;box-shadow:0 12px 30px rgba(16,40,77,.04)}
+.sidebar-card h2,.sidebar-card h3{margin:0 0 12px;font-size:1.05rem}
+.sidebar-card a{display:block;color:var(--ys-navy);font-weight:750;text-decoration:none;padding:10px 0;border-top:1px solid var(--ys-line);line-height:1.45}
+.sidebar-card a:hover{color:var(--ys-blue)}
+.panel{background:linear-gradient(135deg,#f0f8ff,#fff);border:1px solid #d8eaff;border-radius:14px;padding:22px;margin:26px 0}
+.cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--ys-blue);color:white!important;text-decoration:none;padding:13px 18px;border-radius:9px;font-weight:800;box-shadow:0 8px 20px rgba(8,102,216,.18)}
+.cta:hover{background:var(--ys-navy)}
+.links{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.links a{color:var(--ys-blue);font-weight:750}
+footer{margin-top:42px;padding-top:24px;border-top:1px solid var(--ys-line);font-size:.9rem;color:var(--ys-muted)}
+@media(max-width:850px){.article-layout{grid-template-columns:1fr}.article-sidebar{position:static;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}.wrap{padding:30px 18px 56px}body>header{padding:14px 18px}}
+@media(max-width:560px){body{font-size:15px}.article-content{padding:22px 18px;border-radius:14px}.article-byline{gap:10px 14px}.article-sidebar{grid-template-columns:1fr}}
