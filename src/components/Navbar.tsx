@@ -3,10 +3,9 @@ import { Menu, X, MessageSquareQuote } from 'lucide-react';
 
 interface NavbarProps {
   onSelectNav?: (target: string) => void;
-  onOpenBlog?: () => void;
 }
 
-export const Navbar: React.FC<NavbarProps> = ({ onOpenBlog }) => {
+export const Navbar: React.FC<NavbarProps> = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const navLinks = [
@@ -14,14 +13,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenBlog }) => {
     { label: 'Promo', href: '#promo' },
     { label: 'Pilihan Motor', href: '#pilihan-motor' },
     { label: 'Simulasi Kredit', href: '#simulasi-kredit' },
-    { label: 'Blog', href: '#blog' },
+    { label: 'Blog', href: '/blog/' },
     { label: 'Kontak & Area', href: '#kontak-cta' },
   ];
 
   const handleNavClick = (href: string, label: string) => {
     setMobileMenuOpen(false);
-    if (label === 'Blog' && onOpenBlog) {
-      onOpenBlog();
+    if (label === 'Blog') {
+      window.location.assign('/blog/');
       return;
     }
     const element = document.querySelector(href);
