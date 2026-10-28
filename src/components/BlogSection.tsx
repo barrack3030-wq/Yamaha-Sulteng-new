@@ -62,6 +62,43 @@ export const BlogSection: React.FC = () => {
           ))}
         </div>
 
+        {/* Featured model pages: crawlable internal links */}
+        <div className="mt-12">
+          <div className="max-w-3xl mb-6">
+            <p className="text-xs font-bold text-red-700 uppercase tracking-widest mb-2">
+              Panduan Pilih Model
+            </p>
+            <h3 className="text-xl sm:text-2xl font-extrabold text-slate-950 tracking-tight">
+              Cari Informasi Model Yamaha
+            </h3>
+            <p className="mt-2 text-sm sm:text-base text-slate-600">
+              Kenali fitur dan varian, lalu tanyakan harga lokal serta simulasi kredit terbaru sesuai wilayah Anda.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <article className="border border-slate-200 rounded-xl p-6 hover:border-slate-300 transition-colors">
+              <h4 className="text-lg font-bold text-slate-950">Yamaha GEAR ULTIMA</h4>
+              <p className="mt-2 text-sm text-slate-600 leading-relaxed">
+                Pelajari fitur praktis, perbedaan varian, dan hal yang perlu ditanyakan sebelum membeli Gear Ultima.
+              </p>
+              <a href="/Yamaha-Sulteng-new/motor-yamaha-gear-ultima-sulteng/"
+                className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-blue-700 hover:text-blue-800">
+                Panduan Gear Ultima <ChevronRight className="w-4 h-4" />
+              </a>
+            </article>
+            <article className="border border-slate-200 rounded-xl p-6 hover:border-slate-300 transition-colors">
+              <h4 className="text-lg font-bold text-slate-950">Yamaha Fazzio</h4>
+              <p className="mt-2 text-sm text-slate-600 leading-relaxed">
+                Kenali pilihan varian dan fitur Fazzio, serta cara meminta penawaran harga dan angsuran yang sesuai.
+              </p>
+              <a href="/Yamaha-Sulteng-new/motor-yamaha-fazzio-sulteng/"
+                className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-blue-700 hover:text-blue-800">
+                Panduan Fazzio <ChevronRight className="w-4 h-4" />
+              </a>
+            </article>
+          </div>
+        </div>
+
       </div>
     </section>
   );
