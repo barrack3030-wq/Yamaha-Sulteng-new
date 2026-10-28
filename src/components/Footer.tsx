@@ -173,7 +173,7 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBlog }) => {
         {/* Disclaimer & Transparency Bar */}
         <div className="py-6 border-b border-slate-800/80 text-[11px] text-slate-500 leading-relaxed">
           <p>
-            <strong className="text-slate-400">Pemberitahuan &amp; Transparansi:</strong> Website ini merupakan sarana informasi, edukasi spesifikasi, dan jalur konsultasi pemasaran independen yang dikelola oleh Mas Aji untuk memudahkan calon pembeli motor Yamaha di wilayah Toili, Luwuk, dan Morowali (Sulawesi Tengah). Seluruh transaksi pembiayaan kredit diproses melalui lembaga leasing resmi terdaftar OJK (BAF, Adira, FIF, dll.), dan unit motor dikirimkan langsung dengan kondisi baru lengkap dengan surat-surat resmi kendaraan.
+            <strong className="text-slate-400">Pemberitahuan &amp; Transparansi:</strong> Website ini merupakan sarana informasi, edukasi spesifikasi, dan konsultasi pemasaran independen yang dikelola oleh Mas Aji untuk calon pembeli motor Yamaha di wilayah Toili, Luwuk, dan Morowali (Sulawesi Tengah). Persetujuan kredit ditentukan oleh pihak pembiayaan sesuai proses dan persyaratannya. Konfirmasikan nama perusahaan pembiayaan, rincian biaya, ketersediaan unit, dokumen kendaraan, serta jangkauan dan biaya pengiriman sebelum melakukan pemesanan.
           </p>
         </div>
 

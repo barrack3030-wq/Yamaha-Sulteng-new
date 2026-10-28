@@ -24,7 +24,7 @@ export const Hero: React.FC = () => {
             </h1>
 
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
-              Dapatkan informasi harga OTR terkini, promo uang muka terjangkau, dan bantuan berkas hingga disetujui. Layanan pengantaran unit langsung ke depan rumah di <strong className="text-slate-900 font-semibold">Toili</strong>, kawasan pesisir <strong className="text-slate-900 font-semibold">Luwuk</strong>, hingga mess karyawan di <strong className="text-slate-900 font-semibold">Morowali</strong>.
+              Dapatkan informasi harga OTR dan promo terbaru, bandingkan pilihan model, serta konsultasikan simulasi DP dan angsuran. Untuk alamat pengantaran di <strong className="text-slate-900 font-semibold">Toili</strong>, <strong className="text-slate-900 font-semibold">Luwuk</strong>, atau <strong className="text-slate-900 font-semibold">Morowali</strong>, tanyakan jangkauan layanan dan biayanya terlebih dahulu.
             </p>
 
             {/* CTAs */}
