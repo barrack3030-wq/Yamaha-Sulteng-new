@@ -15,12 +15,12 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     id: 'blog-1',
     slug: 'nmax-turbo-vs-aerox-luwuk',
-    title: 'Perbandingan Yamaha NMAX Turbo vs Aerox 155 untuk Jalur Berbukit & Pesisir Kota Luwuk',
+    title: 'Yamaha NMAX atau Aerox untuk Mobilitas di Luwuk? Cara Membandingkannya',
     category: 'Ulasan & Rekomendasi',
     date: '24 Oktober 2026',
     readTime: '4 menit baca',
     targetRegion: 'Luwuk',
-    excerpt: 'Membedah kenyamanan suspensi NMAX Turbo untuk rute tanjakan Keles serta kelincahan bodi Aerox 155 menyusuri pesisir Teluk Lalong.',
+    excerpt: 'Bandingkan kebutuhan berkendara, kenyamanan, karakter model, anggaran, dan fitur sebelum memilih motor untuk aktivitas sehari-hari di Luwuk.'
     content: [
       'Topografi Kota Luwuk memiliki perpaduan unik antara jalan raya pesisir pantai Teluk Lalong yang rata dan jalur perbukitan curam seperti kawasan Keles, Hanga-Hanga, dan arah Luwuk Utara. Karakter jalan ini menuntut motor matic yang memiliki torsi kuat pada putaran bawah dan menengah.',
       'Yamaha NMAX Turbo hadir dengan inovasi YECVT (Yamaha Electric Continuous Variable Transmission) yang menawarkan dua mode berkendara: T-Mode (Town Commuting) untuk kelancaran berkendara santai dan hemat bahan bakar, serta S-Mode (Sport Touring) yang memberikan hentakan tenaga instan saat menanjak.',
@@ -36,12 +36,12 @@ export const BLOG_POSTS: BlogPost[] = [
   {
     id: 'blog-2',
     slug: 'motor-karyawan-tambang-morowali-bahodopi',
-    title: 'Panduan Memilih Motor Andal untuk Karyawan Industri Tambang di Morowali & Bahodopi',
+    title: 'Memilih Motor untuk Kebutuhan Kerja dan Harian di Morowali dan Bahodopi',
     category: 'Panduan Lapangan',
     date: '18 Oktober 2026',
     readTime: '5 menit baca',
     targetRegion: 'Morowali',
-    excerpt: 'Kebutuhan mobilitas shift kerja 24 jam di kawasan IMIP Bahodopi menuntut kendaraan bertenaga, suspensi kokoh, dan perawatan mudah.',
+    excerpt: 'Pertimbangkan jarak perjalanan, kondisi rute, biaya perawatan, kenyamanan, dan anggaran sebelum memilih motor untuk kerja atau kebutuhan harian.'
     content: [
       'Kawasan industri nikel di Bahodopi dan Bungku, Morowali, memiliki ritme kerja yang sangat intens dengan mobilitas jam masuk dan pulang shift kerja yang padat. Kondisi jalan yang sering dilalui kendaraan proyek serta cuaca tropis berdebu membutuhkan motor yang tangguh.',
       'Yamaha WR 155 R menjadi primadona pekerja proyek lapangan dan supervisor area tambang. Suspensi teleskopik panjang 41mm serta ground clearance tinggi membuatnya mampu melibas lubang, genangan lumpur, dan jalan berbatu tanpa khawatir benturan kolong.',
@@ -56,13 +56,13 @@ export const BLOG_POSTS: BlogPost[] = [
   },
   {
     id: 'blog-3',
-    slug: 'tips-kredit-motor-petani-sawit-toili',
-    title: 'Tips Pengajuan Kredit Motor Yamaha di Toili & Moilong: Berkas Petani & Pekebun Sawit Tanpa Ribet',
+    slug: 'tips-kredit-motor-yamaha-toili-moilong',
+    title: 'Sebelum Mengajukan Kredit Motor Yamaha di Toili dan Moilong, Periksa 7 Hal Ini',
     category: 'Tips Pembiayaan',
     date: '10 Oktober 2026',
     readTime: '3 menit baca',
     targetRegion: 'Toili',
-    excerpt: 'Bagaimana warga petani sawit dan sawah di dataran Toili bisa mengajukan kredit motor baru dengan slip timbangan hasil panen.',
+    excerpt: 'Siapkan pertanyaan tentang DP, tenor, angsuran, total pembayaran, biaya tambahan, dan dokumen yang diminta sebelum mengajukan kredit.'
     content: [
       'Dataran Toili dan Kecamatan Moilong merupakan lumbung padi dan perkebunan kelapa sawit terbesar di Kabupaten Banggai. Banyak warga yang berprofesi sebagai petani sawit mandiri atau pedagang hasil bumi yang tidak memiliki slip gaji formal dari perusahaan.',
       'Kabar baiknya, leasing rekanan resmi Yamaha (seperti BAF dan Adira) di wilayah Banggai memiliki skema kredit khusus sektor pertanian dan agribisnis lokal.',
