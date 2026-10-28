@@ -39,5 +39,15 @@ export const BLOG_POSTS: BlogPost[] = [
     readTime: '3 menit baca',
     targetRegion: 'Toili',
     excerpt: 'Siapkan pertanyaan tentang DP, tenor, angsuran, total pembayaran, biaya tambahan, dan dokumen yang diminta sebelum mengajukan kredit.'
+  },
+  {
+    id: 'blog-4',
+    slug: 'harga-motor-yamaha-toili',
+    title: 'Cara Mengecek Harga Motor Yamaha di Toili Sebelum Membeli',
+    category: 'Panduan Pembelian',
+    date: '29 Oktober 2026',
+    readTime: '5 menit baca',
+    targetRegion: 'Toili',
+    excerpt: 'Panduan memeriksa harga tunai, DP, cicilan, total pembayaran, promo, dan ketersediaan unit motor Yamaha untuk pembeli di Toili.'
   }
 ];
