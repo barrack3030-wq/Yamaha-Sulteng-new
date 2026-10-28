@@ -7,6 +7,7 @@ import { CreditCalculator } from './components/CreditCalculator';
 import { CtaSection } from './components/CtaSection';
 import { Footer } from './components/Footer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
+import { BlogTeaser } from './components/BlogTeaser';
 
 export default function App() {
   return (
@@ -24,6 +25,9 @@ export default function App() {
 
         {/* 3. Pilihan Motor (NMAX & Fazzio + Tombol Lihat Motor Lainnya) */}
         <MotorcycleCatalog />
+
+        {/* Editorial blog preview */}
+        <BlogTeaser />
 
         {/* 4. Langsung ke Simulasi Kredit */}
         <CreditCalculator />
