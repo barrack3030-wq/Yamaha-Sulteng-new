@@ -57,14 +57,13 @@ export const BlogSection: React.FC = () => {
                   {post.date}
                 </span>
 
-                <button
-                  type="button"
-                  onClick={() => setActiveArticle(post)}
+                <a
+                  href={`/Yamaha-Sulteng-new/blog/${post.slug}/`}
                   className="inline-flex items-center gap-1 text-xs font-bold text-blue-700 group-hover:text-blue-800 transition-colors"
                 >
-                  <span>Baca Selengkapnya</span>
+                  <span>Baca Artikel Lengkap</span>
                   <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-                </button>
+                </a>
               </div>
             </article>
           ))}
