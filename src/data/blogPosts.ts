@@ -7,6 +7,10 @@ export interface BlogPost {
   readTime: string;
   excerpt: string;
   targetRegion: string;
+  author: string;
+  publishedAt: string;
+  updatedAt: string;
+  primaryKeyword: string;
 }
 
 export const BLOG_POSTS: BlogPost[] = [
@@ -17,7 +21,11 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Ulasan & Rekomendasi',
     date: '28 Oktober 2026',
     readTime: '4 menit baca',
-    targetRegion: 'Luwuk',\n    author: 'Mas Aji',\n    publishedAt: '2026-10-28',\n    updatedAt: '2026-10-29',\n    primaryKeyword: 'Yamaha NMAX atau Aerox Luwuk',
+    targetRegion: 'Luwuk',
+    author: 'Mas Aji',
+    publishedAt: '2026-10-28',
+    updatedAt: '2026-10-29',
+    primaryKeyword: 'Yamaha NMAX atau Aerox Luwuk',
     excerpt: 'Bandingkan kebutuhan berkendara, kenyamanan, karakter model, anggaran, dan fitur sebelum memilih motor untuk aktivitas sehari-hari di Luwuk.'
   },
   {
@@ -27,7 +35,11 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Panduan Lapangan',
     date: '28 Oktober 2026',
     readTime: '5 menit baca',
-    targetRegion: 'Morowali',\n    author: 'Mas Aji',\n    publishedAt: '2026-10-28',\n    updatedAt: '2026-10-29',\n    primaryKeyword: 'motor Yamaha untuk kerja Morowali',
+    targetRegion: 'Morowali',
+    author: 'Mas Aji',
+    publishedAt: '2026-10-28',
+    updatedAt: '2026-10-29',
+    primaryKeyword: 'motor Yamaha untuk kerja Morowali',
     excerpt: 'Pertimbangkan jarak perjalanan, kondisi rute, biaya perawatan, kenyamanan, dan anggaran sebelum memilih motor untuk kerja atau kebutuhan harian.'
   },
   {
@@ -37,7 +49,11 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Tips Pembiayaan',
     date: '28 Oktober 2026',
     readTime: '3 menit baca',
-    targetRegion: 'Toili',\n    author: 'Mas Aji',\n    publishedAt: '2026-10-28',\n    updatedAt: '2026-10-29',\n    primaryKeyword: 'kredit motor Yamaha Toili',
+    targetRegion: 'Toili',
+    author: 'Mas Aji',
+    publishedAt: '2026-10-28',
+    updatedAt: '2026-10-29',
+    primaryKeyword: 'kredit motor Yamaha Toili',
     excerpt: 'Siapkan pertanyaan tentang DP, tenor, angsuran, total pembayaran, biaya tambahan, dan dokumen yang diminta sebelum mengajukan kredit.'
   },
   {
@@ -47,7 +63,11 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Panduan Pembelian',
     date: '29 Oktober 2026',
     readTime: '5 menit baca',
-    targetRegion: 'Toili',\n    author: 'Mas Aji',\n    publishedAt: '2026-10-29',\n    updatedAt: '2026-10-29',\n    primaryKeyword: 'harga motor Yamaha Toili',
+    targetRegion: 'Toili',
+    author: 'Mas Aji',
+    publishedAt: '2026-10-29',
+    updatedAt: '2026-10-29',
+    primaryKeyword: 'harga motor Yamaha Toili',
     excerpt: 'Panduan memeriksa harga tunai, DP, cicilan, total pembayaran, promo, dan ketersediaan unit motor Yamaha untuk pembeli di Toili.'
   },
   {
@@ -57,7 +77,11 @@ export const BLOG_POSTS: BlogPost[] = [
     category: 'Panduan Model',
     date: '29 Oktober 2026',
     readTime: '6 menit baca',
-    targetRegion: 'Toili',\n    author: 'Mas Aji',\n    publishedAt: '2026-10-29',\n    updatedAt: '2026-10-29',\n    primaryKeyword: 'Yamaha GEAR ULTIMA Toili',
+    targetRegion: 'Toili',
+    author: 'Mas Aji',
+    publishedAt: '2026-10-29',
+    updatedAt: '2026-10-29',
+    primaryKeyword: 'Yamaha GEAR ULTIMA Toili',
     excerpt: 'Kenali varian, fitur, kenyamanan, dan biaya kepemilikan Yamaha GEAR ULTIMA sebelum meminta penawaran untuk wilayah Toili.'
   }
 ];
