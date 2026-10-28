@@ -1,104 +1,47 @@
 import React from 'react';
-import { BLOG_POSTS } from '../data/blogPosts';
-import { ChevronRight } from 'lucide-react';
+import { ArrowUpRight, BookOpen, MapPin } from 'lucide-react';
 
 export const BlogSection: React.FC = () => {
   return (
-    <section id="blog" className="py-14 sm:py-20 bg-white border-b border-slate-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <div className="max-w-3xl mb-12">
-          <p className="text-xs font-bold text-blue-700 uppercase tracking-widest mb-2">
-            Pusat Edukasi &amp; Tips Otomotif Lokal
+    <section id="blog" className="relative overflow-hidden border-b border-slate-200 bg-slate-50 py-16 sm:py-24">
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 sm:px-6 lg:grid-cols-[1.05fr_.95fr] lg:items-center lg:px-8">
+        <div className="max-w-2xl">
+          <p className="mb-3 text-xs font-extrabold uppercase tracking-[.18em] text-red-700">
+            Yamaha Sulteng Journal
           </p>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-950 tracking-tight">
-            Blog &amp; Panduan Motor Yamaha
+          <h2 className="text-3xl font-extrabold leading-tight tracking-tight text-slate-950 sm:text-4xl lg:text-5xl">
+            Panduan memilih motor. Informasi yang membantu keputusan.
           </h2>
-          <p className="mt-2 text-sm sm:text-base text-slate-600">
-            Informasi pilihan motor yang cocok dengan medan jalan di Luwuk, Morowali, dan Toili, serta tips pengajuan kredit yang aman dan praktis.
+          <p className="mt-5 max-w-xl text-base leading-7 text-slate-600 sm:text-lg">
+            Baca tips kredit, perbandingan model, dan panduan berkendara yang relevan untuk Toili, Luwuk, Morowali, dan Bahodopi.
           </p>
+          <a
+            href="/blog/"
+            className="mt-8 inline-flex min-h-12 items-center justify-center gap-3 border border-slate-950 bg-slate-950 px-6 py-3 text-sm font-bold text-white transition hover:bg-red-700 hover:border-red-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-700"
+          >
+            Jelajahi Semua Artikel <ArrowUpRight className="h-4 w-4" />
+          </a>
+          <p className="mt-4 text-xs text-slate-500">Artikel informatif · Bahasa Indonesia · Fokus wilayah Sulawesi Tengah</p>
         </div>
 
-        {/* Blog Posts Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-          {BLOG_POSTS.map((post) => (
-            <article
-              key={post.id}
-              className="bg-white rounded-xl border border-slate-200 hover:border-slate-300 shadow-xs hover:shadow-md transition-all flex flex-col justify-between p-6 group"
-            >
-              <div>
-                {/* Zero-Pill Unboxed Metadata */}
-                <div className="flex items-center gap-2 text-xs text-slate-500 mb-3">
-                  <span className="font-semibold text-blue-700">{post.category}</span>
-                  <span aria-hidden="true">·</span>
-                  <span>{post.targetRegion}</span>
-                  <span aria-hidden="true">·</span>
-                  <span>{post.readTime}</span>
-                </div>
-
-                <h3 className="text-lg font-bold text-slate-950 leading-snug group-hover:text-blue-700 transition-colors mb-3">
-                  {post.title}
-                </h3>
-
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed line-clamp-3 mb-6">
-                  {post.excerpt}
-                </p>
-              </div>
-
-              <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
-                <span className="text-xs text-slate-400">
-                  {post.date}
-                </span>
-
-                <a
-                  href={`/blog/${post.slug}/`}
-                  className="inline-flex items-center gap-1 text-xs font-bold text-blue-700 group-hover:text-blue-800 transition-colors"
-                >
-                  <span>Baca Artikel Lengkap</span>
-                  <ChevronRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
-                </a>
-              </div>
-            </article>
-          ))}
+        <div className="grid gap-4 sm:grid-cols-2">
+          <a href="/blog/" className="group flex min-h-48 flex-col justify-between border border-slate-200 bg-white p-6 transition hover:border-red-700 hover:shadow-lg sm:min-h-56">
+            <BookOpen className="h-7 w-7 text-red-700" strokeWidth={1.7} />
+            <div>
+              <h3 className="text-xl font-extrabold tracking-tight text-slate-950">Tips & perbandingan motor</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-600">Kenali perbedaan model dan sesuaikan pilihan dengan kebutuhan harian.</p>
+              <span className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-red-700">Baca panduan <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" /></span>
+            </div>
+          </a>
+          <a href="/blog/" className="group flex min-h-48 flex-col justify-between border border-slate-200 bg-white p-6 transition hover:border-red-700 hover:shadow-lg sm:mt-10 sm:min-h-56">
+            <MapPin className="h-7 w-7 text-blue-800" strokeWidth={1.7} />
+            <div>
+              <h3 className="text-xl font-extrabold tracking-tight text-slate-950">Informasi lokal</h3>
+              <p className="mt-2 text-sm leading-6 text-slate-600">Pertimbangkan rute, anggaran, dan hal penting sebelum mengajukan kredit.</p>
+              <span className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-blue-800">Lihat artikel lokal <ArrowUpRight className="h-4 w-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" /></span>
+            </div>
+          </a>
         </div>
-
-        {/* Featured model pages: crawlable internal links */}
-        <div className="mt-12">
-          <div className="max-w-3xl mb-6">
-            <p className="text-xs font-bold text-red-700 uppercase tracking-widest mb-2">
-              Panduan Pilih Model
-            </p>
-            <h3 className="text-xl sm:text-2xl font-extrabold text-slate-950 tracking-tight">
-              Cari Informasi Model Yamaha
-            </h3>
-            <p className="mt-2 text-sm sm:text-base text-slate-600">
-              Kenali fitur dan varian, lalu tanyakan harga lokal serta simulasi kredit terbaru sesuai wilayah Anda.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-            <article className="border border-slate-200 rounded-xl p-6 hover:border-slate-300 transition-colors">
-              <h4 className="text-lg font-bold text-slate-950">Yamaha GEAR ULTIMA</h4>
-              <p className="mt-2 text-sm text-slate-600 leading-relaxed">
-                Pelajari fitur praktis, perbedaan varian, dan hal yang perlu ditanyakan sebelum membeli Gear Ultima.
-              </p>
-              <a href="/motor-yamaha-gear-ultima-sulteng/"
-                className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-blue-700 hover:text-blue-800">
-                Panduan Gear Ultima <ChevronRight className="w-4 h-4" />
-              </a>
-            </article>
-            <article className="border border-slate-200 rounded-xl p-6 hover:border-slate-300 transition-colors">
-              <h4 className="text-lg font-bold text-slate-950">Yamaha Fazzio</h4>
-              <p className="mt-2 text-sm text-slate-600 leading-relaxed">
-                Kenali pilihan varian dan fitur Fazzio, serta cara meminta penawaran harga dan angsuran yang sesuai.
-              </p>
-              <a href="/motor-yamaha-fazzio-sulteng/"
-                className="mt-4 inline-flex items-center gap-1 text-sm font-bold text-blue-700 hover:text-blue-800">
-                Panduan Fazzio <ChevronRight className="w-4 h-4" />
-              </a>
-            </article>
-          </div>
-        </div>
-
       </div>
     </section>
   );
