@@ -8,8 +8,8 @@ body{font-family:"Plus Jakarta Sans",Inter,system-ui,-apple-system,BlinkMacSyste
 header.sticky{box-shadow:0 5px 24px rgba(8,43,85,.045)}
 #beranda{background:linear-gradient(180deg,#f6faff 0%,#fff 72%);padding-top:34px}
 #beranda h1{letter-spacing:-.045em;line-height:1.08}
-#beranda .lg\\:col-span-5>div{border:0;border-radius:22px;box-shadow:0 22px 60px rgba(8,43,85,.18)}
-#beranda .lg\\:col-span-5 img{min-height:340px}
+#beranda img{border-radius:22px;box-shadow:0 22px 60px rgba(8,43,85,.18)}
+#beranda img{min-height:340px}
 #beranda .mt-12{border-top-color:#dbe7f3}
 #beranda .bg-blue-700{background:#0866d8}
 #beranda .bg-blue-700:hover{background:#082b55}
