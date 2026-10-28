@@ -1,11 +1,7 @@
 import React from 'react';
 import { MessageSquareQuote, MapPin, Facebook, Phone, Clock, Shield } from 'lucide-react';
 
-interface FooterProps {
-  onOpenBlog?: () => void;
-}
-
-export const Footer: React.FC<FooterProps> = ({ onOpenBlog }) => {
+export const Footer: React.FC = () => {
   return (
     <footer id="kontak" className="bg-slate-950 text-slate-300 pt-16 pb-12 border-t border-slate-900">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -95,19 +91,9 @@ export const Footer: React.FC<FooterProps> = ({ onOpenBlog }) => {
                 </a>
               </li>
               <li>
-                {onOpenBlog ? (
-                  <button
-                    type="button"
-                    onClick={onOpenBlog}
-                    className="hover:text-white transition-colors text-left"
-                  >
-                    Blog &amp; Panduan
-                  </button>
-                ) : (
-                  <a href="#blog" className="hover:text-white transition-colors">
-                    Blog &amp; Panduan
-                  </a>
-                )}
+                <a href="/blog/" className="hover:text-white transition-colors">
+                  Blog &amp; Panduan
+                </a>
               </li>
               <li>
                 <a href="#kontak-cta" className="hover:text-white transition-colors">
