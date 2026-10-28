@@ -4,8 +4,8 @@ import path from 'path';
 import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
-  // GitHub Pages project-site path; keep canonical and generated asset URLs aligned.
-  const base = '/Yamaha-Sulteng-new/';
+  // Custom domain serves the site from the root path.
+  const base = '/';
   return {
     base,
     plugins: [react(), tailwindcss()],
