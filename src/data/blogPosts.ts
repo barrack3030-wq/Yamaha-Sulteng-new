@@ -11,6 +11,9 @@ export interface BlogPost {
   publishedAt: string;
   updatedAt: string;
   primaryKeyword: string;
+  featuredImage: string;
+  imageAlt: string;
+  imageCredit: string;
 }
 
 export const BLOG_POSTS: BlogPost[] = [
@@ -26,6 +29,9 @@ export const BLOG_POSTS: BlogPost[] = [
     publishedAt: '2026-10-28',
     updatedAt: '2026-10-29',
     primaryKeyword: 'Yamaha NMAX atau Aerox Luwuk',
+    featuredImage: 'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2023041415280991628A58578.png',
+    imageAlt: 'Yamaha Aerox 155 warna biru, gambar produk resmi Yamaha Indonesia',
+    imageCredit: 'Yamaha Motor Indonesia',
     excerpt: 'Bandingkan kebutuhan berkendara, kenyamanan, karakter model, anggaran, dan fitur sebelum memilih motor untuk aktivitas sehari-hari di Luwuk.'
   },
   {
@@ -40,6 +46,9 @@ export const BLOG_POSTS: BlogPost[] = [
     publishedAt: '2026-10-28',
     updatedAt: '2026-10-29',
     primaryKeyword: 'motor Yamaha untuk kerja Morowali',
+    featuredImage: 'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026011411065945811R98632.png',
+    imageAlt: 'Yamaha NMAX warna abu-abu, gambar produk resmi Yamaha Indonesia',
+    imageCredit: 'Yamaha Motor Indonesia',
     excerpt: 'Pertimbangkan jarak perjalanan, kondisi rute, biaya perawatan, kenyamanan, dan anggaran sebelum memilih motor untuk kerja atau kebutuhan harian.'
   },
   {
@@ -54,6 +63,9 @@ export const BLOG_POSTS: BlogPost[] = [
     publishedAt: '2026-10-28',
     updatedAt: '2026-10-29',
     primaryKeyword: 'kredit motor Yamaha Toili',
+    featuredImage: 'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026012315110540976J2461.png',
+    imageAlt: 'Yamaha Fazzio warna biru muda, gambar produk resmi Yamaha Indonesia',
+    imageCredit: 'Yamaha Motor Indonesia',
     excerpt: 'Siapkan pertanyaan tentang DP, tenor, angsuran, total pembayaran, biaya tambahan, dan dokumen yang diminta sebelum mengajukan kredit.'
   },
   {
@@ -68,6 +80,9 @@ export const BLOG_POSTS: BlogPost[] = [
     publishedAt: '2026-10-29',
     updatedAt: '2026-10-29',
     primaryKeyword: 'harga motor Yamaha Toili',
+    featuredImage: 'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2023041415280299726S94464.png',
+    imageAlt: 'Yamaha Aerox 155 warna hitam, gambar produk resmi Yamaha Indonesia',
+    imageCredit: 'Yamaha Motor Indonesia',
     excerpt: 'Panduan memeriksa harga tunai, DP, cicilan, total pembayaran, promo, dan ketersediaan unit motor Yamaha untuk pembeli di Toili.'
   },
   {
@@ -82,6 +97,9 @@ export const BLOG_POSTS: BlogPost[] = [
     publishedAt: '2026-10-29',
     updatedAt: '2026-10-29',
     primaryKeyword: 'Yamaha GEAR ULTIMA Toili',
+    featuredImage: 'https://www.yamaha-motor.co.id/uploads/content/20260402151101_69ce2495582a9.jpg',
+    imageAlt: 'Yamaha GEAR ULTIMA Hybrid dan pilihan model, gambar resmi Yamaha Indonesia',
+    imageCredit: 'Yamaha Motor Indonesia',
     excerpt: 'Kenali varian, fitur, kenyamanan, dan biaya kepemilikan Yamaha GEAR ULTIMA sebelum meminta penawaran untuk wilayah Toili.'
   }
 ];

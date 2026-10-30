@@ -65,7 +65,7 @@ h1{font-size:clamp(2.15rem,5vw,4rem);line-height:1.08;letter-spacing:-.05em;max-
 .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
 .card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:14px;padding:23px;min-height:310px;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
 .card:hover{transform:translateY(-3px);border-color:#b7c8e8;box-shadow:0 12px 26px #0f172a0a}
-.card-top{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
+.card-image{margin:-23px -23px 18px;overflow:hidden;background:#eef2f7;border-radius:14px 14px 0 0}.card-image img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}.card-image figcaption{padding:6px 12px;font-size:.7rem;color:#64748b;background:#fff}.card-image figcaption a{color:#475569}.card-top{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap}
 .tag{display:inline-flex;border-radius:5px;background:#edf3ff;color:#1e40af;padding:5px 8px;font-size:.72rem;font-weight:850;letter-spacing:.04em}
 .region{color:#64748b;font-size:.78rem;font-weight:750}
 .card h3{font-size:1.25rem;line-height:1.3;letter-spacing:-.025em;margin:17px 0 10px}
@@ -89,7 +89,7 @@ footer{margin-top:42px;padding-top:22px;border-top:1px solid var(--line);color:#
 footer p{margin:6px 0}
 footer a{color:#334155;font-weight:700}
 @media(max-width:900px){.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.section-head{align-items:stretch;flex-direction:column}.search-wrap{max-width:420px}}
-@media(max-width:600px){.header-inner{padding:15px 18px}.header-link{display:none}.wrap{padding:26px 16px 54px}.hero{border-radius:13px}.grid{grid-template-columns:1fr}.card{min-height:0;padding:20px}.author-panel{padding:19px}.bottom-cta{align-items:flex-start;flex-direction:column}.cta{white-space:normal}.hero-meta{align-items:flex-start}}
+@media(max-width:600px){.card-image{margin:-20px -20px 16px}.header-inner{padding:15px 18px}.header-link{display:none}.wrap{padding:26px 16px 54px}.hero{border-radius:13px}.grid{grid-template-columns:1fr}.card{min-height:0;padding:20px}.author-panel{padding:19px}.bottom-cta{align-items:flex-start;flex-direction:column}.cta{white-space:normal}.hero-meta{align-items:flex-start}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
 </style>
 </head>
@@ -106,6 +106,7 @@ footer a{color:#334155;font-weight:700}
 <div class="section-head"><div><h2>Artikel terbaru</h2><p>Pilih panduan sesuai kebutuhan dan wilayah Anda.</p></div><div class="search-wrap"><label for="article-search">Cari artikel</label><input id="article-search" type="search" placeholder="Contoh: kredit, Toili, NMAX" autocomplete="off"></div></div>
 <section class="grid" id="article-grid" aria-label="Daftar artikel">
 <article class="card" data-search="yamaha gear ultima toili fitur varian pembelian model">
+<figure class="card-image"><img src="https://www.yamaha-motor.co.id/uploads/content/20260402151101_69ce2495582a9.jpg" alt="Yamaha GEAR ULTIMA Hybrid dan pilihan model, gambar resmi Yamaha Indonesia" loading="lazy" decoding="async" width="560" height="360"><figcaption>Gambar: <a href="https://www.yamaha-motor.co.id/" target="_blank" rel="noopener noreferrer">Yamaha Motor Indonesia</a></figcaption></figure>
 <div class="card-top"><span class="tag">Panduan model</span><span class="region">TOILI</span></div>
 <h3>Yamaha GEAR ULTIMA di Toili: Fitur yang Perlu Dicek Sebelum Membeli</h3>
 <p>Kenali varian, fitur, kenyamanan, dan biaya kepemilikan yang perlu diperiksa sebelum meminta penawaran.</p>
@@ -113,6 +114,7 @@ footer a{color:#334155;font-weight:700}
 <a class="read-link" href="/blog/yamaha-gear-ultima-toili/">Baca artikel <span aria-hidden="true">↗</span></a>
 </article>
 <article class="card" data-search="harga motor yamaha toili tunai dp cicilan kredit">
+<figure class="card-image"><img src="https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2023041415280299726S94464.png" alt="Yamaha Aerox 155 warna hitam, gambar produk resmi Yamaha Indonesia" loading="lazy" decoding="async" width="560" height="360"><figcaption>Gambar: <a href="https://www.yamaha-motor.co.id/" target="_blank" rel="noopener noreferrer">Yamaha Motor Indonesia</a></figcaption></figure>
 <div class="card-top"><span class="tag">Panduan pembelian</span><span class="region">TOILI</span></div>
 <h3>Cara Mengecek Harga Motor Yamaha di Toili Sebelum Membeli</h3>
 <p>Pelajari apa yang perlu dikonfirmasi dari harga tunai, DP, cicilan, total pembayaran, promo, dan stok.</p>
@@ -120,6 +122,7 @@ footer a{color:#334155;font-weight:700}
 <a class="read-link" href="/blog/harga-motor-yamaha-toili/">Baca artikel <span aria-hidden="true">↗</span></a>
 </article>
 <article class="card" data-search="kredit motor yamaha toili moilong dp tenor cicilan">
+<figure class="card-image"><img src="https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026012315110540976J2461.png" alt="Yamaha Fazzio warna biru muda, gambar produk resmi Yamaha Indonesia" loading="lazy" decoding="async" width="560" height="360"><figcaption>Gambar: <a href="https://www.yamaha-motor.co.id/" target="_blank" rel="noopener noreferrer">Yamaha Motor Indonesia</a></figcaption></figure>
 <div class="card-top"><span class="tag">Tips pembiayaan</span><span class="region">TOILI · MOILONG</span></div>
 <h3>Sebelum Mengajukan Kredit Motor Yamaha di Toili dan Moilong, Periksa 7 Hal Ini</h3>
 <p>Checklist anggaran, DP, tenor, total pembayaran, dokumen, verifikasi, dan pengiriman.</p>
@@ -127,6 +130,7 @@ footer a{color:#334155;font-weight:700}
 <a class="read-link" href="/blog/tips-kredit-motor-yamaha-toili-moilong/">Baca artikel <span aria-hidden="true">↗</span></a>
 </article>
 <article class="card" data-search="motor kerja harian morowali bahodopi karyawan tambang biaya perawatan">
+<figure class="card-image"><img src="https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026011411065945811R98632.png" alt="Yamaha NMAX warna abu-abu, gambar produk resmi Yamaha Indonesia" loading="lazy" decoding="async" width="560" height="360"><figcaption>Gambar: <a href="https://www.yamaha-motor.co.id/" target="_blank" rel="noopener noreferrer">Yamaha Motor Indonesia</a></figcaption></figure>
 <div class="card-top"><span class="tag">Panduan lapangan</span><span class="region">MOROWALI</span></div>
 <h3>Memilih Motor untuk Kebutuhan Kerja dan Harian di Morowali dan Bahodopi</h3>
 <p>Pertimbangkan rute, kenyamanan, biaya operasional, perawatan, dan anggaran sebelum menentukan pilihan.</p>
@@ -134,6 +138,7 @@ footer a{color:#334155;font-weight:700}
 <a class="read-link" href="/blog/motor-karyawan-tambang-morowali-bahodopi/">Baca artikel <span aria-hidden="true">↗</span></a>
 </article>
 <article class="card" data-search="yamaha nmax aerox luwuk perbandingan kenyamanan biaya">
+<figure class="card-image"><img src="https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2023041415280991628A58578.png" alt="Yamaha Aerox 155 warna biru, gambar produk resmi Yamaha Indonesia" loading="lazy" decoding="async" width="560" height="360"><figcaption>Gambar: <a href="https://www.yamaha-motor.co.id/" target="_blank" rel="noopener noreferrer">Yamaha Motor Indonesia</a></figcaption></figure>
 <div class="card-top"><span class="tag">Ulasan & rekomendasi</span><span class="region">LUWUK</span></div>
 <h3>Yamaha NMAX atau Aerox untuk Mobilitas di Luwuk? Cara Membandingkannya</h3>
 <p>Bandingkan ergonomi, kebutuhan perjalanan, varian, anggaran, dan biaya kepemilikan.</p>
