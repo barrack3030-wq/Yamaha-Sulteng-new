@@ -18,6 +18,24 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    id: 'blog-6',
+    slug: 'yamaha-fazzio-vs-gear-ultima-toili',
+    title: 'Yamaha Fazzio vs GEAR ULTIMA di Toili: Mana yang Cocok untuk Kebutuhan Harian?',
+    category: 'Perbandingan Model',
+    date: '30 Oktober 2026',
+    readTime: '5 menit baca',
+    targetRegion: 'Toili',
+    author: 'Mas Aji',
+    publishedAt: '2026-10-30',
+    updatedAt: '2026-10-30',
+    primaryKeyword: 'Yamaha Fazzio vs GEAR ULTIMA Toili',
+    featuredImage: 'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026012315110540976J2461.png',
+    imageAlt: 'Yamaha Fazzio Hybrid, gambar produk resmi Yamaha Indonesia',
+    imageCredit: 'Yamaha Motor Indonesia',
+    excerpt: 'Bandingkan karakter desain, ruang simpan, fitur tiap varian, dan kebutuhan harian sebelum memilih Fazzio atau GEAR ULTIMA di Toili.'
+  },
+
+  {
     id: 'blog-1',
     slug: 'nmax-turbo-vs-aerox-luwuk',
     title: 'Yamaha NMAX atau Aerox untuk Mobilitas di Luwuk? Cara Membandingkannya',
