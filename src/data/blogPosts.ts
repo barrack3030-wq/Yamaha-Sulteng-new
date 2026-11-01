@@ -18,6 +18,24 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    id: 'blog-7',
+    slug: 'aplikasi-yamaha-y-on-morowali',
+    title: 'Yamaha Y-ON di Morowali: Fitur Pengingat Servis dan Cara Memantau Motor',
+    category: 'Aplikasi & Teknologi',
+    date: '2 November 2026',
+    readTime: '5 menit baca',
+    targetRegion: 'Morowali',
+    author: 'Mas Aji',
+    publishedAt: '2026-11-02',
+    updatedAt: '2026-11-02',
+    primaryKeyword: 'Yamaha Y-ON Morowali',
+    featuredImage: 'https://www.yamaha-motor.co.id/uploads/content/20260622154811_6a38f6cb6c5af.jpg',
+    imageAlt: 'Pengguna menunjukkan aplikasi Yamaha yang terhubung dengan sepeda motor, gambar resmi Yamaha Indonesia',
+    imageCredit: 'Yamaha Motor Indonesia',
+    excerpt: 'Kenali aplikasi Yamaha Y-ON, pengingat servis, riwayat perawatan, statistik berkendara, dan fitur konektivitas untuk pemilik motor di Morowali.'
+  },
+
+  {
     id: 'blog-6',
     slug: 'yamaha-fazzio-vs-gear-ultima-toili',
     title: 'Yamaha Fazzio vs GEAR ULTIMA di Toili: Mana yang Cocok untuk Kebutuhan Harian?',
