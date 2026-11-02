@@ -100,13 +100,22 @@ export const MotorcycleCatalog: React.FC = () => {
               <div>
                 {/* Product Image Box */}
                 <div className="relative aspect-[4/3] bg-slate-100 overflow-hidden border-b border-slate-100">
-                  <img
-                    src={motor.image}
-                    alt={`Motor Yamaha ${motor.name} - Penjualan Toili Luwuk Morowali`}
-                    referrerPolicy="no-referrer"
-                    className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-out"
-                    loading="lazy"
-                  />
+                  {motor.image ? (
+                    <img
+                      src={motor.image}
+                      alt={`Motor Yamaha ${motor.name} - Penjualan Toili Luwuk Morowali`}
+                      referrerPolicy="no-referrer"
+                      width={800}
+                      height={597}
+                      className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500 ease-out"
+                      loading="lazy"
+                    />
+                  ) : (
+                    <div className="w-full h-full flex flex-col items-center justify-center gap-1 px-6 text-center text-slate-500">
+                      <span className="text-sm font-semibold text-slate-700">{motor.name}</span>
+                      <span className="text-xs">Foto unit menyusul. Tanya warna &amp; stok via WhatsApp.</span>
+                    </div>
+                  )}
                   {motor.badge && (
                     <div className="absolute top-3 left-3 bg-slate-900/90 backdrop-blur-xs text-white text-[11px] font-medium px-2.5 py-1 rounded">
                       {motor.badge}
@@ -254,14 +263,18 @@ export const MotorcycleCatalog: React.FC = () => {
             {/* Modal Body */}
             <div className="p-6 space-y-6">
               {/* Image banner */}
-              <div className="rounded-xl overflow-hidden aspect-[16/9] bg-slate-100 border border-slate-200">
-                <img
-                  src={activeModalMotor.image}
-                  alt={activeModalMotor.name}
-                  referrerPolicy="no-referrer"
-                  className="w-full h-full object-cover"
-                />
-              </div>
+              {activeModalMotor.image && (
+                <div className="rounded-xl overflow-hidden aspect-[16/9] bg-slate-100 border border-slate-200">
+                  <img
+                    src={activeModalMotor.image}
+                    alt={activeModalMotor.name}
+                    referrerPolicy="no-referrer"
+                    width={800}
+                    height={597}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              )}
 
               <div>
                 <h4 className="text-sm font-bold text-slate-900 mb-2">Gambaran Motor</h4>

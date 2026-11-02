@@ -11,7 +11,7 @@ export interface Motorcycle {
   features: string[];
   bestFor: string;
   targetRegion: string[];
-  image: string;
+  image?: string;
   badge?: string;
   transmission: string;
   starter: string;

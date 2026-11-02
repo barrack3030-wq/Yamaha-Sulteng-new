@@ -1,6 +1,6 @@
 import React from 'react';
 import { Sparkles, Gift, MessageSquareQuote, Percent, Truck, Tag } from 'lucide-react';
-import promoUniversalImg from '../assets/images/promo_dp_ringan_1793101753666.jpg';
+import promoUniversalImg from '../assets/images/promo_dp_ringan_1793101753666.webp';
 
 export const PromoSection: React.FC = () => {
   const universalPromos = [
@@ -47,6 +47,8 @@ export const PromoSection: React.FC = () => {
                 src={promoUniversalImg}
                 alt="Promo Resmi Pembelian dan Serah Terima Motor Yamaha"
                 referrerPolicy="no-referrer"
+                width={1000}
+                height={558}
                 className="w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-500 ease-out"
                 loading="lazy"
               />

@@ -1,8 +1,8 @@
 import { Motorcycle } from '../types';
-import nmaxImg from '../assets/images/yamaha_nmax_turbo_1793097235564.jpg';
-import aeroxImg from '../assets/images/yamaha_aerox_sport_1793097235686.jpg';
-import fazzioImg from '../assets/images/yamaha_fazzio_classy_1793097237172.jpg';
-import wr155Img from '../assets/images/yamaha_wr155_adventure_1793097237943.jpg';
+import nmaxImg from '../assets/images/yamaha_nmax_turbo_1793097235564.webp';
+import aeroxImg from '../assets/images/yamaha_aerox_sport_1793097235686.webp';
+import fazzioImg from '../assets/images/yamaha_fazzio_classy_1793097237172.webp';
+import wr155Img from '../assets/images/yamaha_wr155_adventure_1793097237943.webp';
 
 export const MOTORCYCLES: Motorcycle[] = [
   {
@@ -132,7 +132,7 @@ export const MOTORCYCLES: Motorcycle[] = [
     ],
     bestFor: 'Eksekutif, PNS, tenaga medis, dan kalangan pebisnis di pusat kota Luwuk yang mengutamakan tampilan prestisius.',
     targetRegion: ['Luwuk', 'Toili'],
-    image: fazzioImg,
+    // Foto unit Grand Filano belum tersedia; jangan pakai foto model lain.
     badge: 'Desain Mewah Premium'
   },
   {
@@ -158,7 +158,7 @@ export const MOTORCYCLES: Motorcycle[] = [
     ],
     bestFor: 'Kendaraan operasional harian keluarga di Toili dan transportasi praktis pekerja shift di Morowali.',
     targetRegion: ['Toili', 'Morowali', 'Luwuk'],
-    image: nmaxImg,
+    // Foto unit Gear 125 belum tersedia; jangan pakai foto model lain.
     badge: 'Pilihan Ekonomis & Kuat'
   }
 ];

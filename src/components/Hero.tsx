@@ -1,6 +1,6 @@
 import React from 'react';
 import { MessageSquareQuote, ShieldCheck, Truck, FileText, ChevronRight } from 'lucide-react';
-import heroImg from '../assets/images/hero_yamaha_showroom_1793097235199.jpg';
+import heroImg from '../assets/images/hero_yamaha_showroom_1793097235199.webp';
 
 export const Hero: React.FC = () => {
   return (
@@ -66,6 +66,9 @@ export const Hero: React.FC = () => {
                 src={heroImg}
                 alt="Showroom Motor Yamaha Maxi Series Sulawesi Tengah"
                 referrerPolicy="no-referrer"
+                width={1000}
+                height={558}
+                fetchPriority="high"
                 className="w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-500 ease-out"
                 loading="eager"
               />
