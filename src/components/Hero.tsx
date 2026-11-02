@@ -12,18 +12,18 @@ export const Hero: React.FC = () => {
       <div className="absolute inset-x-0 top-0 h-[440px] bg-gradient-to-br from-blue-50 via-white to-white pointer-events-none" />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-9 lg:gap-12 items-center">
-          <div className="lg:col-span-7 space-y-6">
-            <div className="inline-flex items-center gap-2 text-[11px] font-bold text-blue-800 tracking-[.2em] uppercase">
+          <div className="lg:col-span-7 space-y-6 text-center">
+            <div className="inline-flex items-center justify-center gap-2 text-[11px] font-bold text-blue-800 tracking-[.2em] uppercase">
               <span className="w-7 h-px bg-blue-700" />
               Yamaha Motor · Sulawesi Tengah
             </div>
-            <h1 className="max-w-3xl text-[2.55rem] sm:text-5xl lg:text-[3.65rem] font-extrabold text-slate-950 tracking-[-.045em] leading-[1.08] text-balance">
+            <h1 className="mx-auto max-w-3xl text-[2.35rem] sm:text-5xl lg:text-[3.65rem] font-extrabold text-slate-950 tracking-[-.045em] leading-[1.08] text-balance">
               Temukan Motor Yamaha yang <span className="text-blue-700">Sesuai Gaya Anda.</span>
             </h1>
-            <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
-              Jelajahi pilihan motor Yamaha untuk kebutuhan harian, perjalanan, hingga aktivitas kerja. Dapatkan informasi harga OTR, promo, dan simulasi kredit untuk Toili, Luwuk, serta Morowali bersama Mas Aji.
+            <p className="mx-auto max-w-xl text-sm sm:text-base text-slate-600 leading-relaxed text-center">
+              Temukan motor yang cocok, lalu konsultasikan harga, promo, dan pilihan kredit bersama Mas Aji.
             </p>
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 pt-1">
               <a href="https://wa.me/6285820830530?text=Halo%20Mas%20Aji%2C%20saya%20ingin%20konsultasi%20pilihan%20motor%20Yamaha." target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-bold text-white bg-blue-700 hover:bg-blue-800 rounded-md shadow-lg shadow-blue-900/15 transition-all hover:-translate-y-0.5">
                 <MessageSquareQuote className="w-4 h-4" /> Konsultasi dengan Mas Aji
               </a>
