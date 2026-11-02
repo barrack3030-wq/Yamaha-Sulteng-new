@@ -12,18 +12,18 @@ export const Hero: React.FC = () => {
       <div className="absolute inset-x-0 top-0 h-[440px] bg-gradient-to-br from-blue-50 via-white to-white pointer-events-none" />
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-9 lg:gap-12 items-center">
-          <div className="lg:col-span-7 space-y-6 text-center">
-            <div className="inline-flex items-center justify-center gap-2 text-[11px] font-bold text-blue-800 tracking-[.2em] uppercase">
+          <div className="lg:col-span-7 space-y-6 text-center home-reveal">
+            <div className="home-reveal-item inline-flex items-center justify-center gap-2 text-[11px] font-bold text-blue-800 tracking-[.2em] uppercase">
               <span className="w-7 h-px bg-blue-700" />
               Yamaha Motor · Sulawesi Tengah
             </div>
-            <h1 className="mx-auto max-w-3xl text-[2.35rem] sm:text-5xl lg:text-[3.65rem] font-extrabold text-slate-950 tracking-[-.045em] leading-[1.08] text-balance">
+            <h1 className="home-reveal-item home-title mx-auto max-w-3xl text-[2.35rem] sm:text-5xl lg:text-[3.65rem] font-extrabold text-slate-950 tracking-[-.045em] leading-[1.08] text-balance">
               Temukan Motor Yamaha yang <span className="text-blue-700">Sesuai Gaya Anda.</span>
             </h1>
-            <p className="mx-auto max-w-xl text-sm sm:text-base text-slate-600 leading-relaxed text-center">
+            <p className="home-reveal-item mx-auto max-w-xl text-sm sm:text-base text-slate-600 leading-relaxed text-center">
               Temukan motor yang cocok, lalu konsultasikan harga, promo, dan pilihan kredit bersama Mas Aji.
             </p>
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 pt-1">
+            <div className="home-reveal-item flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 pt-1">
               <a href="https://wa.me/6285820830530?text=Halo%20Mas%20Aji%2C%20saya%20ingin%20konsultasi%20pilihan%20motor%20Yamaha." target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-bold text-white bg-blue-700 hover:bg-blue-800 rounded-md shadow-lg shadow-blue-900/15 transition-all hover:-translate-y-0.5">
                 <MessageSquareQuote className="w-4 h-4" /> Konsultasi dengan Mas Aji
               </a>
@@ -40,7 +40,7 @@ export const Hero: React.FC = () => {
             </div>
           </div>
 
-          <div className="lg:col-span-5 relative">
+          <div className="lg:col-span-5 relative home-visual-reveal">
             <div className="relative min-h-[270px] sm:min-h-[350px] rounded-2xl bg-slate-950 overflow-hidden shadow-2xl shadow-blue-950/15">
               <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_30%,rgba(37,99,235,.65),transparent_55%),linear-gradient(145deg,#0f172a,#172554_65%,#020617)]" />
               <div className="absolute -right-12 -top-16 w-64 h-64 rounded-full border border-white/10" />
@@ -66,7 +66,7 @@ export const Hero: React.FC = () => {
           </div>
         </div>
 
-        <div className="mt-14 sm:mt-16">
+        <div className="mt-14 sm:mt-16 home-section-reveal">
           <div className="flex items-end justify-between gap-4 mb-5">
             <div>
               <p className="text-[10px] font-bold uppercase tracking-[.22em] text-blue-700">Explore the lineup</p>
@@ -90,11 +90,11 @@ export const Hero: React.FC = () => {
           <p className="text-[11px] text-slate-400 mt-3 sm:hidden">Galeri motor bergerak otomatis. Pilih katalog untuk melihat detail model.</p>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-slate-200 grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div className="flex items-start gap-3"><div className="p-2.5 rounded-lg bg-blue-50 text-blue-700 shrink-0"><Truck className="w-5 h-5" /></div><div><h2 className="text-sm font-semibold text-slate-900">Pengantaran Unit</h2><p className="text-xs text-slate-500 mt-0.5">Jangkauan layanan Toili, Luwuk, dan Morowali.</p></div></div>
-          <div className="flex items-start gap-3"><div className="p-2.5 rounded-lg bg-blue-50 text-blue-700 shrink-0"><ShieldCheck className="w-5 h-5" /></div><div><h2 className="text-sm font-semibold text-slate-900">Informasi Transparan</h2><p className="text-xs text-slate-500 mt-0.5">Konfirmasi harga, promo, dan biaya sebelum transaksi.</p></div></div>
-          <div className="flex items-start gap-3"><div className="p-2.5 rounded-lg bg-blue-50 text-blue-700 shrink-0"><FileText className="w-5 h-5" /></div><div><h2 className="text-sm font-semibold text-slate-900">Bantuan Pengajuan</h2><p className="text-xs text-slate-500 mt-0.5">Pendampingan proses pembelian dan kredit.</p></div></div>
-          <div className="flex items-start gap-3"><div className="p-2.5 rounded-lg bg-blue-50 text-blue-700 shrink-0"><MessageSquareQuote className="w-5 h-5" /></div><div><h2 className="text-sm font-semibold text-slate-900">Konsultasi Personal</h2><p className="text-xs text-slate-500 mt-0.5">Tanyakan warna, stok, DP, dan angsuran via WhatsApp.</p></div></div>
+        <div className="mt-12 pt-8 border-t border-slate-200 grid grid-cols-2 md:grid-cols-4 gap-6 home-features">
+          <div className="home-feature flex items-start gap-3"><div className="p-2.5 rounded-lg bg-blue-50 text-blue-700 shrink-0"><Truck className="w-5 h-5" /></div><div><h2 className="text-sm font-semibold text-slate-900">Pengantaran Unit</h2><p className="text-xs text-slate-500 mt-0.5">Jangkauan layanan Toili, Luwuk, dan Morowali.</p></div></div>
+          <div className="home-feature flex items-start gap-3"><div className="p-2.5 rounded-lg bg-blue-50 text-blue-700 shrink-0"><ShieldCheck className="w-5 h-5" /></div><div><h2 className="text-sm font-semibold text-slate-900">Informasi Transparan</h2><p className="text-xs text-slate-500 mt-0.5">Konfirmasi harga, promo, dan biaya sebelum transaksi.</p></div></div>
+          <div className="home-feature flex items-start gap-3"><div className="p-2.5 rounded-lg bg-blue-50 text-blue-700 shrink-0"><FileText className="w-5 h-5" /></div><div><h2 className="text-sm font-semibold text-slate-900">Bantuan Pengajuan</h2><p className="text-xs text-slate-500 mt-0.5">Pendampingan proses pembelian dan kredit.</p></div></div>
+          <div className="home-feature flex items-start gap-3"><div className="p-2.5 rounded-lg bg-blue-50 text-blue-700 shrink-0"><MessageSquareQuote className="w-5 h-5" /></div><div><h2 className="text-sm font-semibold text-slate-900">Konsultasi Personal</h2><p className="text-xs text-slate-500 mt-0.5">Tanyakan warna, stok, DP, dan angsuran via WhatsApp.</p></div></div>
         </div>
       </div>
     </section>
