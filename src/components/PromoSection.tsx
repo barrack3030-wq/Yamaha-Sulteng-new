@@ -1,7 +1,6 @@
 import React from 'react';
 import { Sparkles, Gift, MessageSquareQuote, Percent, Truck, Tag } from 'lucide-react';
 import promoUniversalImg from '../assets/images/promo_dp_ringan_1793101753666.webp';
-import { ScrollReveal } from './ScrollReveal';
 
 export const PromoSection: React.FC = () => {
   const universalPromos = [
