@@ -1,6 +1,7 @@
 import React from 'react';
 import { MessageSquareQuote, ShieldCheck, Truck, FileText, ArrowUpRight } from 'lucide-react';
 import { MOTORCYCLES } from '../data/motorcycles';
+import { ScrollReveal } from './ScrollReveal';
 
 const showcase = MOTORCYCLES.filter((motor) => motor.image).slice(0, 4);
 
@@ -50,8 +51,8 @@ export const Hero: React.FC = () => {
                   <span>Move with confidence</span>
                   <span className="text-white/50">Yamaha Sulteng</span>
                 </div>
-                <div className="flex justify-center items-center py-3">
-                  <img src={showcase[0]?.image} alt="Pilihan motor Yamaha NMAX" width={620} height={420} fetchPriority="high" className="w-full max-h-56 sm:max-h-64 object-contain drop-shadow-[0_22px_28px_rgba(0,0,0,.35)]" />
+                <div className="flex justify-center items-center py-3 hero-parallax-frame">
+                  <img src={showcase[0]?.image} alt="Pilihan motor Yamaha NMAX" width={620} height={420} fetchPriority="high" className="hero-parallax-image w-full max-h-56 sm:max-h-64 object-contain drop-shadow-[0_22px_28px_rgba(0,0,0,.35)]" />
                 </div>
                 <div className="flex items-end justify-between gap-4">
                   <div>
@@ -66,7 +67,7 @@ export const Hero: React.FC = () => {
           </div>
         </div>
 
-        <div className="mt-14 sm:mt-16 home-section-reveal">
+        <ScrollReveal className="mt-14 sm:mt-16 home-section-reveal">
           <div className="flex items-end justify-between gap-4 mb-5">
             <div>
               <p className="text-[10px] font-bold uppercase tracking-[.22em] text-blue-700">Explore the lineup</p>
@@ -88,14 +89,14 @@ export const Hero: React.FC = () => {
             </div>
           </div>
           <p className="text-[11px] text-slate-400 mt-3 sm:hidden">Galeri motor bergerak otomatis. Pilih katalog untuk melihat detail model.</p>
-        </div>
+        </ScrollReveal>
 
-        <div className="mt-12 pt-8 border-t border-slate-200 grid grid-cols-2 md:grid-cols-4 gap-6 home-features">
+        <ScrollReveal className="mt-12 pt-8 border-t border-slate-200 grid grid-cols-2 md:grid-cols-4 gap-6 home-features">
           <div className="home-feature flex items-start gap-3"><div className="p-2.5 rounded-lg bg-blue-50 text-blue-700 shrink-0"><Truck className="w-5 h-5" /></div><div><h2 className="text-sm font-semibold text-slate-900">Pengantaran Unit</h2><p className="text-xs text-slate-500 mt-0.5">Jangkauan layanan Toili, Luwuk, dan Morowali.</p></div></div>
           <div className="home-feature flex items-start gap-3"><div className="p-2.5 rounded-lg bg-blue-50 text-blue-700 shrink-0"><ShieldCheck className="w-5 h-5" /></div><div><h2 className="text-sm font-semibold text-slate-900">Informasi Transparan</h2><p className="text-xs text-slate-500 mt-0.5">Konfirmasi harga, promo, dan biaya sebelum transaksi.</p></div></div>
           <div className="home-feature flex items-start gap-3"><div className="p-2.5 rounded-lg bg-blue-50 text-blue-700 shrink-0"><FileText className="w-5 h-5" /></div><div><h2 className="text-sm font-semibold text-slate-900">Bantuan Pengajuan</h2><p className="text-xs text-slate-500 mt-0.5">Pendampingan proses pembelian dan kredit.</p></div></div>
           <div className="home-feature flex items-start gap-3"><div className="p-2.5 rounded-lg bg-blue-50 text-blue-700 shrink-0"><MessageSquareQuote className="w-5 h-5" /></div><div><h2 className="text-sm font-semibold text-slate-900">Konsultasi Personal</h2><p className="text-xs text-slate-500 mt-0.5">Tanyakan warna, stok, DP, dan angsuran via WhatsApp.</p></div></div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   );
