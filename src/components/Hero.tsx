@@ -67,7 +67,7 @@ export const Hero: React.FC = () => {
           </div>
         </div>
 
-        <ScrollReveal className="mt-14 sm:mt-16 home-section-reveal">
+        <ScrollReveal className="mt-14 sm:mt-16">
           <div className="flex items-end justify-between gap-4 mb-5">
             <div>
               <p className="text-[10px] font-bold uppercase tracking-[.22em] text-blue-700">Explore the lineup</p>
