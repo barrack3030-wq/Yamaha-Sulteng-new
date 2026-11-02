@@ -78,11 +78,11 @@ export const Hero: React.FC = () => {
           <div className="product-marquee relative overflow-hidden" aria-label="Galeri motor Yamaha bergerak">
             <div className="product-marquee-track flex w-max gap-4 sm:gap-5">
               {items.map((motor, index) => (
-                <a href="#pilihan-motor" key={motor.id + '-' + index} className="group relative w-[220px] sm:w-[270px] h-[150px] sm:h-[180px] shrink-0 overflow-hidden rounded-xl border border-slate-200 bg-slate-50 hover:border-blue-300 transition-colors">
-                  <img src={motor.image} alt={'Yamaha ' + motor.name} loading="lazy" width={600} height={420} className="w-full h-full object-contain p-3 transition-transform duration-700 group-hover:scale-105" />
-                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/85 via-slate-950/35 to-transparent px-4 pt-10 pb-3">
-                    <p className="text-[10px] text-blue-200 font-bold uppercase tracking-widest">{motor.series}</p>
-                    <p className="text-sm font-bold text-white">{motor.name.replace('Yamaha ', '').split(' ').slice(0, 3).join(' ')}</p>
+                <a href="#pilihan-motor" key={motor.id + '-' + index} className="group flex flex-col w-[220px] sm:w-[270px] h-[190px] sm:h-[215px] shrink-0 overflow-hidden rounded-xl border border-slate-200 bg-white hover:border-blue-300 hover:shadow-lg hover:shadow-blue-950/5 transition-all duration-500">
+                  <img src={motor.image} alt={'Yamaha ' + motor.name} loading="lazy" width={600} height={420} className="w-full h-[145px] sm:h-[165px] object-contain p-4 transition-transform duration-700 group-hover:scale-[1.06]" />
+                  <div className="mt-auto px-4 pb-3 pt-1 text-left">
+                    <p className="text-[10px] text-blue-700 font-bold uppercase tracking-widest">{motor.series}</p>
+                    <p className="text-sm font-bold text-slate-900">{motor.name.replace('Yamaha ', '').split(' ').slice(0, 3).join(' ')}</p>
                   </div>
                 </a>
               ))}
