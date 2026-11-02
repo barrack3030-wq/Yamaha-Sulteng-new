@@ -37,3 +37,55 @@ body { margin: 0; min-width: 320px; background: #fff; }
   .product-marquee-track { animation: none; }
   html { scroll-behavior: auto; }
 }
+
+/* Premium homepage motion */
+.home-reveal-item {
+  opacity: 0;
+  transform: translateY(22px);
+  animation: home-rise-in .75s cubic-bezier(.2,.75,.25,1) forwards;
+}
+.home-reveal-item:nth-child(1) { animation-delay: .08s; }
+.home-reveal-item:nth-child(2) { animation-delay: .2s; }
+.home-reveal-item:nth-child(3) { animation-delay: .34s; }
+.home-reveal-item:nth-child(4) { animation-delay: .48s; }
+.home-title span { display: inline-block; animation: title-glow-in 1s ease-out .55s both; }
+.home-visual-reveal {
+  opacity: 0;
+  transform: translateY(24px) scale(.975);
+  animation: home-visual-in .9s cubic-bezier(.2,.75,.25,1) .25s forwards;
+}
+.home-section-reveal { animation: home-fade-in .9s ease-out .5s both; }
+.home-features .home-feature {
+  opacity: 0;
+  transform: translateY(16px);
+  animation: home-rise-in .65s ease-out forwards;
+}
+.home-features .home-feature:nth-child(1) { animation-delay: .15s; }
+.home-features .home-feature:nth-child(2) { animation-delay: .28s; }
+.home-features .home-feature:nth-child(3) { animation-delay: .41s; }
+.home-features .home-feature:nth-child(4) { animation-delay: .54s; }
+.home-feature > div:first-child { transition: transform .35s ease, background-color .35s ease; }
+.home-feature:hover > div:first-child { transform: translateY(-4px) rotate(-4deg); background-color: #dbeafe; }
+@keyframes home-rise-in {
+  to { opacity: 1; transform: translateY(0); }
+}
+@keyframes home-visual-in {
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes home-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes title-glow-in {
+  from { opacity: .55; transform: translateY(7px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .home-reveal-item, .home-visual-reveal, .home-section-reveal,
+  .home-features .home-feature, .home-title span {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .home-feature > div:first-child { transition: none; }
+}
