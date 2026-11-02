@@ -4,7 +4,6 @@ import { Hero } from './components/Hero';
 import { PromoSection } from './components/PromoSection';
 import { MotorcycleCatalog } from './components/MotorcycleCatalog';
 import { CreditCalculator } from './components/CreditCalculator';
-import { CtaSection } from './components/CtaSection';
 import { Footer } from './components/Footer';
 import { FloatingWhatsApp } from './components/FloatingWhatsApp';
 
@@ -27,9 +26,6 @@ export default function App() {
 
         {/* 4. Langsung ke Simulasi Kredit */}
         <CreditCalculator />
-
-        {/* 5. Kemudian Call To Action (CTA) & Area Penjualan */}
-        <CtaSection />
       </main>
 
       {/* Footer with Blog trigger */}
