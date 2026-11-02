@@ -25,7 +25,7 @@ body { margin: 0; min-width: 320px; background: #fff; }
 .product-marquee::before { left: 0; background: linear-gradient(90deg, #fff, transparent); }
 .product-marquee::after { right: 0; background: linear-gradient(270deg, #fff, transparent); }
 .product-marquee-track {
-  animation: yamaha-product-scroll 34s linear infinite;
+  animation: yamaha-product-scroll 48s linear infinite;
   will-change: transform;
 }
 .product-marquee:hover .product-marquee-track { animation-play-state: paused; }
@@ -88,4 +88,43 @@ body { margin: 0; min-width: 320px; background: #fff; }
     transform: none !important;
   }
   .home-feature > div:first-child { transition: none; }
+}
+
+/* Premium scroll reveal and cinematic parallax */
+.scroll-reveal {
+  opacity: 0;
+  transform: translate3d(0, 28px, 0);
+  transition: opacity .8s cubic-bezier(.2,.7,.2,1), transform .8s cubic-bezier(.2,.7,.2,1);
+}
+.scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+.product-card {
+  transition: transform .55s cubic-bezier(.2,.7,.2,1), box-shadow .55s ease, border-color .35s ease;
+}
+.product-card:hover { transform: translateY(-5px); box-shadow: 0 20px 45px rgba(15, 23, 42, .09); }
+.promo-card { transition: transform .55s cubic-bezier(.2,.7,.2,1), box-shadow .55s ease, border-color .35s ease; }
+.promo-card:hover { transform: translateY(-3px); box-shadow: 0 16px 36px rgba(15, 23, 42, .07); }
+.hero-parallax-frame { perspective: 900px; }
+.hero-parallax-image { transform: translateZ(0); will-change: transform; }
+@supports (animation-timeline: view()) {
+  .hero-parallax-image {
+    animation: yamaha-parallax linear both;
+    animation-timeline: view();
+    animation-range: cover 0% cover 100%;
+  }
+  @keyframes yamaha-parallax {
+    from { transform: translateY(28px) scale(.96); }
+    to { transform: translateY(-24px) scale(1.035); }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .scroll-reveal, .scroll-reveal.is-visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+  .product-card:hover, .promo-card:hover { transform: none; }
+  .hero-parallax-image { animation: none !important; }
 }
