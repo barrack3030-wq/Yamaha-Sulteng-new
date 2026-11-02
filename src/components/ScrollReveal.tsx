@@ -26,7 +26,7 @@ export const ScrollReveal: React.FC<ScrollRevealProps> = ({ children, className 
           observer.unobserve(entry.target);
         }
       },
-      { threshold: 0.12, rootMargin: '0px 0px -36px 0px' }
+      { threshold: 0.01, rootMargin: '0px 0px -8px 0px' }
     );
 
     observer.observe(element);
