@@ -1,1 +1,39 @@
 @import "tailwindcss";
+
+:root {
+  color-scheme: light;
+  font-family: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 320px; background: #fff; }
+
+.product-marquee::before,
+.product-marquee::after {
+  content: "";
+  position: absolute;
+  z-index: 2;
+  top: 0;
+  bottom: 0;
+  width: 42px;
+  pointer-events: none;
+}
+.product-marquee::before { left: 0; background: linear-gradient(90deg, #fff, transparent); }
+.product-marquee::after { right: 0; background: linear-gradient(270deg, #fff, transparent); }
+.product-marquee-track {
+  animation: yamaha-product-scroll 34s linear infinite;
+  will-change: transform;
+}
+.product-marquee:hover .product-marquee-track { animation-play-state: paused; }
+@keyframes yamaha-product-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .product-marquee-track { animation: none; }
+  html { scroll-behavior: auto; }
+}
