@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { MOTORCYCLES } from '../data/motorcycles';
 import { Motorcycle } from '../types';
+import { ScrollReveal } from './ScrollReveal';
 import { MessageSquareQuote, Info, X, Check, Gauge, Sliders, Search, ChevronDown, ChevronUp } from 'lucide-react';
 
 export const MotorcycleCatalog: React.FC = () => {
@@ -93,9 +94,9 @@ export const MotorcycleCatalog: React.FC = () => {
           }`}
         >
           {displayedMotors.map((motor) => (
+            <ScrollReveal key={motor.id} className="h-full" delay={displayedMotors.indexOf(motor) * 90}>
             <div
-              key={motor.id}
-              className="bg-white rounded-xl border border-slate-200 hover:border-slate-300 shadow-sm hover:shadow-md transition-all flex flex-col justify-between overflow-hidden group"
+              className="bg-white rounded-xl border border-slate-200 hover:border-slate-300 shadow-sm hover:shadow-md transition-all flex flex-col justify-between overflow-hidden group product-card"
             >
               <div>
                 {/* Product Image Box */}
@@ -181,6 +182,7 @@ export const MotorcycleCatalog: React.FC = () => {
                 </button>
               </div>
             </div>
+            </ScrollReveal>
           ))}
         </div>
 
