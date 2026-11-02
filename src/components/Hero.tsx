@@ -1,131 +1,100 @@
 import React from 'react';
-import { MessageSquareQuote, ShieldCheck, Truck, FileText, ChevronRight } from 'lucide-react';
-import heroImg from '../assets/images/hero_yamaha_showroom_1793097235199.webp';
+import { MessageSquareQuote, ShieldCheck, Truck, FileText, ArrowUpRight } from 'lucide-react';
+import { MOTORCYCLES } from '../data/motorcycles';
+
+const showcase = MOTORCYCLES.filter((motor) => motor.image).slice(0, 4);
 
 export const Hero: React.FC = () => {
+  const items = [...showcase, ...showcase];
+
   return (
-    <section id="beranda" className="relative bg-white pt-6 pb-12 sm:pt-10 sm:pb-16 overflow-hidden border-b border-slate-200">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Two-column Hero Split */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-          {/* Left Column: Headlines & CTAs */}
+    <section id="beranda" className="relative overflow-hidden bg-white pt-12 pb-12 sm:pt-16 sm:pb-16">
+      <div className="absolute inset-x-0 top-0 h-[440px] bg-gradient-to-br from-blue-50 via-white to-white pointer-events-none" />
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-9 lg:gap-12 items-center">
           <div className="lg:col-span-7 space-y-6">
-            {/* Context kicker: clean unboxed text */}
-            <div className="flex items-center gap-2 text-xs font-semibold text-blue-700 tracking-wider uppercase">
-              <span>Wilayah Toili</span>
-              <span aria-hidden="true" className="text-slate-300">·</span>
-              <span>Luwuk</span>
-              <span aria-hidden="true" className="text-slate-300">·</span>
-              <span>Morowali</span>
+            <div className="inline-flex items-center gap-2 text-[11px] font-bold text-blue-800 tracking-[.2em] uppercase">
+              <span className="w-7 h-px bg-blue-700" />
+              Yamaha Motor · Sulawesi Tengah
             </div>
-
-            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950 tracking-tight leading-[1.15] text-balance">
-              Pilihan Motor Yamaha Terbaik &amp; Konsultasi Kredit Tepercaya
+            <h1 className="max-w-3xl text-[2.55rem] sm:text-5xl lg:text-[3.65rem] font-extrabold text-slate-950 tracking-[-.045em] leading-[1.08] text-balance">
+              Temukan Motor Yamaha yang <span className="text-blue-700">Sesuai Gaya Anda.</span>
             </h1>
-
             <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl">
-              Dapatkan informasi harga OTR dan promo terbaru, bandingkan pilihan model, serta konsultasikan simulasi DP dan angsuran. Untuk alamat pengantaran di <strong className="text-slate-900 font-semibold">Toili</strong>, <strong className="text-slate-900 font-semibold">Luwuk</strong>, atau <strong className="text-slate-900 font-semibold">Morowali</strong>, tanyakan jangkauan layanan dan biayanya terlebih dahulu.
+              Jelajahi pilihan motor Yamaha untuk kebutuhan harian, perjalanan, hingga aktivitas kerja. Dapatkan informasi harga OTR, promo, dan simulasi kredit untuk Toili, Luwuk, serta Morowali bersama Mas Aji.
             </p>
-
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
-              <a
-                href="https://wa.me/6285820830530?text=Halo%20Mas%20Aji,%20saya%20tertarik%20dengan%20motor%20Yamaha.%20Boleh%20minta%20info%20harga%20OTR%20dan%20promo%20terbaru?"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-semibold text-white bg-blue-700 hover:bg-blue-800 active:bg-blue-900 rounded-lg shadow-sm transition-colors text-center"
-              >
-                <MessageSquareQuote className="w-5 h-5 shrink-0" />
-                <span>Konsultasi WhatsApp Mas Aji</span>
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1">
+              <a href="https://wa.me/6285820830530?text=Halo%20Mas%20Aji%2C%20saya%20ingin%20konsultasi%20pilihan%20motor%20Yamaha." target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-bold text-white bg-blue-700 hover:bg-blue-800 rounded-md shadow-lg shadow-blue-900/15 transition-all hover:-translate-y-0.5">
+                <MessageSquareQuote className="w-4 h-4" /> Konsultasi dengan Mas Aji
               </a>
-
-              <a
-                href="#pilihan-motor"
-                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-base font-medium text-slate-700 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 rounded-lg transition-colors text-center"
-              >
-                <span>Lihat Katalog Motor</span>
-                <ChevronRight className="w-4 h-4 shrink-0" />
+              <a href="#pilihan-motor" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold text-slate-700 hover:text-blue-700 border border-slate-300 hover:border-blue-300 rounded-md transition-colors">
+                Jelajahi Katalog <ArrowUpRight className="w-4 h-4" />
               </a>
             </div>
-
-            {/* Direct Contact Callout */}
-            <div className="pt-2 flex items-center gap-3 text-xs sm:text-sm text-slate-500">
-              <span className="font-semibold text-slate-900">Marketing Support:</span>
-              <span>Mas Aji</span>
-              <span aria-hidden="true" className="text-slate-300">|</span>
-              <a href="tel:085820830530" className="hover:text-blue-700 font-medium">0858-2083-0530</a>
-              <span aria-hidden="true" className="text-slate-300">|</span>
-              <span>Respon Cepat Setiap Hari</span>
+            <div className="flex flex-wrap items-center gap-x-5 gap-y-2 pt-1 text-xs text-slate-500">
+              <span className="font-semibold text-slate-800">Mas Aji · Sales Consultant</span>
+              <span className="hidden sm:inline text-slate-300">|</span>
+              <span>Toili · Luwuk · Morowali</span>
+              <span className="hidden sm:inline text-slate-300">|</span>
+              <a href="tel:085820830530" className="font-semibold text-blue-700 hover:underline">0858-2083-0530</a>
             </div>
           </div>
 
-          {/* Right Column: Hero Visual Showcase */}
           <div className="lg:col-span-5 relative">
-            <div className="relative rounded-2xl overflow-hidden border border-slate-200/90 shadow-md bg-slate-950 aspect-[16/10] sm:aspect-[16/10] lg:aspect-[4/3] group">
-              <img
-                src={heroImg}
-                alt="Showroom Motor Yamaha Maxi Series Sulawesi Tengah"
-                referrerPolicy="no-referrer"
-                width={1000}
-                height={558}
-                fetchPriority="high"
-                className="w-full h-full object-cover object-center group-hover:scale-[1.02] transition-transform duration-500 ease-out"
-                loading="eager"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent pointer-events-none" />
-              <div className="absolute bottom-4 left-4 right-4 text-white">
-                <p className="text-xs font-semibold text-blue-300 uppercase tracking-wider mb-1">
-                  Yamaha Maxi &amp; Sport Flagship
-                </p>
-                <p className="text-sm sm:text-base font-bold text-white">
-                  Teknologi Blue Core VVA, Turbo &amp; Connected
-                </p>
+            <div className="relative min-h-[270px] sm:min-h-[350px] rounded-2xl bg-slate-950 overflow-hidden shadow-2xl shadow-blue-950/15">
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_30%,rgba(37,99,235,.65),transparent_55%),linear-gradient(145deg,#0f172a,#172554_65%,#020617)]" />
+              <div className="absolute -right-12 -top-16 w-64 h-64 rounded-full border border-white/10" />
+              <div className="absolute -right-2 -top-6 w-44 h-44 rounded-full border border-white/10" />
+              <div className="relative z-10 flex flex-col justify-between min-h-[270px] sm:min-h-[350px] p-6 sm:p-8">
+                <div className="flex items-center justify-between text-[10px] font-bold uppercase tracking-[.22em] text-blue-200">
+                  <span>Move with confidence</span>
+                  <span className="text-white/50">Yamaha Sulteng</span>
+                </div>
+                <div className="flex justify-center items-center py-3">
+                  <img src={showcase[0]?.image} alt="Pilihan motor Yamaha NMAX" width={620} height={420} fetchPriority="high" className="w-full max-h-56 sm:max-h-64 object-contain drop-shadow-[0_22px_28px_rgba(0,0,0,.35)]" />
+                </div>
+                <div className="flex items-end justify-between gap-4">
+                  <div>
+                    <p className="text-xs text-blue-200 font-semibold uppercase tracking-widest">Pilihan unggulan</p>
+                    <p className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Ride Your Way.</p>
+                    <p className="text-xs text-slate-300 mt-1">Temukan model yang cocok untuk Anda.</p>
+                  </div>
+                  <a href="#pilihan-motor" aria-label="Lihat katalog motor" className="w-11 h-11 shrink-0 rounded-full bg-white text-blue-800 flex items-center justify-center hover:bg-blue-100 transition-colors"><ArrowUpRight className="w-5 h-5" /></a>
+                </div>
               </div>
             </div>
           </div>
         </div>
 
-        {/* 4-Item Proof & Trust Strip below Hero */}
+        <div className="mt-14 sm:mt-16">
+          <div className="flex items-end justify-between gap-4 mb-5">
+            <div>
+              <p className="text-[10px] font-bold uppercase tracking-[.22em] text-blue-700">Explore the lineup</p>
+              <h2 className="text-lg sm:text-xl font-bold text-slate-950 mt-1">Kenali lini motor Yamaha</h2>
+            </div>
+            <span className="hidden sm:block text-xs text-slate-400">Pilihan bergerak · Geser untuk melihat</span>
+          </div>
+          <div className="product-marquee relative overflow-hidden" aria-label="Galeri motor Yamaha bergerak">
+            <div className="product-marquee-track flex w-max gap-4 sm:gap-5">
+              {items.map((motor, index) => (
+                <a href="#pilihan-motor" key={motor.id + '-' + index} className="group relative w-[220px] sm:w-[270px] h-[150px] sm:h-[180px] shrink-0 overflow-hidden rounded-xl border border-slate-200 bg-slate-50 hover:border-blue-300 transition-colors">
+                  <img src={motor.image} alt={'Yamaha ' + motor.name} loading="lazy" width={600} height={420} className="w-full h-full object-contain p-3 transition-transform duration-700 group-hover:scale-105" />
+                  <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-slate-950/85 via-slate-950/35 to-transparent px-4 pt-10 pb-3">
+                    <p className="text-[10px] text-blue-200 font-bold uppercase tracking-widest">{motor.series}</p>
+                    <p className="text-sm font-bold text-white">{motor.name.replace('Yamaha ', '').split(' ').slice(0, 3).join(' ')}</p>
+                  </div>
+                </a>
+              ))}
+            </div>
+          </div>
+          <p className="text-[11px] text-slate-400 mt-3 sm:hidden">Galeri motor bergerak otomatis. Pilih katalog untuk melihat detail model.</p>
+        </div>
+
         <div className="mt-12 pt-8 border-t border-slate-200 grid grid-cols-2 md:grid-cols-4 gap-6">
-          <div className="flex items-start gap-3">
-            <div className="p-2.5 rounded-lg bg-blue-50 text-blue-700 shrink-0">
-              <Truck className="w-5 h-5" />
-            </div>
-            <div>
-              <h2 className="text-sm font-semibold text-slate-900">Kirim Sampai Alamat</h2>
-              <p className="text-xs text-slate-500 mt-0.5">Jangkau Toili, Luwuk Kota, hingga mess Morowali.</p>
-            </div>
-          </div>
-
-          <div className="flex items-start gap-3">
-            <div className="p-2.5 rounded-lg bg-blue-50 text-blue-700 shrink-0">
-              <ShieldCheck className="w-5 h-5" />
-            </div>
-            <div>
-              <h2 className="text-sm font-semibold text-slate-900">Transaksi Aman</h2>
-              <p className="text-xs text-slate-500 mt-0.5">DP dibayarkan saat motor tiba (COD) atau saat ACC.</p>
-            </div>
-          </div>
-
-          <div className="flex items-start gap-3">
-            <div className="p-2.5 rounded-lg bg-blue-50 text-blue-700 shrink-0">
-              <FileText className="w-5 h-5" />
-            </div>
-            <div>
-              <h2 className="text-sm font-semibold text-slate-900">Berkas Dibantu</h2>
-              <p className="text-xs text-slate-500 mt-0.5">Pendampingan pengajuan kredit hingga disetujui leasing.</p>
-            </div>
-          </div>
-
-          <div className="flex items-start gap-3">
-            <div className="p-2.5 rounded-lg bg-blue-50 text-blue-700 shrink-0">
-              <MessageSquareQuote className="w-5 h-5" />
-            </div>
-            <div>
-              <h2 className="text-sm font-semibold text-slate-900">Konsultasi Ramah</h2>
-              <p className="text-xs text-slate-500 mt-0.5">Tanya estimasi angsuran &amp; warna unit via WhatsApp.</p>
-            </div>
-          </div>
+          <div className="flex items-start gap-3"><div className="p-2.5 rounded-lg bg-blue-50 text-blue-700 shrink-0"><Truck className="w-5 h-5" /></div><div><h2 className="text-sm font-semibold text-slate-900">Pengantaran Unit</h2><p className="text-xs text-slate-500 mt-0.5">Jangkauan layanan Toili, Luwuk, dan Morowali.</p></div></div>
+          <div className="flex items-start gap-3"><div className="p-2.5 rounded-lg bg-blue-50 text-blue-700 shrink-0"><ShieldCheck className="w-5 h-5" /></div><div><h2 className="text-sm font-semibold text-slate-900">Informasi Transparan</h2><p className="text-xs text-slate-500 mt-0.5">Konfirmasi harga, promo, dan biaya sebelum transaksi.</p></div></div>
+          <div className="flex items-start gap-3"><div className="p-2.5 rounded-lg bg-blue-50 text-blue-700 shrink-0"><FileText className="w-5 h-5" /></div><div><h2 className="text-sm font-semibold text-slate-900">Bantuan Pengajuan</h2><p className="text-xs text-slate-500 mt-0.5">Pendampingan proses pembelian dan kredit.</p></div></div>
+          <div className="flex items-start gap-3"><div className="p-2.5 rounded-lg bg-blue-50 text-blue-700 shrink-0"><MessageSquareQuote className="w-5 h-5" /></div><div><h2 className="text-sm font-semibold text-slate-900">Konsultasi Personal</h2><p className="text-xs text-slate-500 mt-0.5">Tanyakan warna, stok, DP, dan angsuran via WhatsApp.</p></div></div>
         </div>
       </div>
     </section>
