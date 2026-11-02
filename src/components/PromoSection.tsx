@@ -1,6 +1,7 @@
 import React from 'react';
 import { Sparkles, Gift, MessageSquareQuote, Percent, Truck, Tag } from 'lucide-react';
 import promoUniversalImg from '../assets/images/promo_dp_ringan_1793101753666.webp';
+import { ScrollReveal } from './ScrollReveal';
 
 export const PromoSection: React.FC = () => {
   const universalPromos = [
@@ -25,7 +26,7 @@ export const PromoSection: React.FC = () => {
     <section id="promo" className="py-14 sm:py-20 bg-slate-50 border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="max-w-3xl mb-10">
+        <div className="max-w-3xl mb-10 scroll-reveal">
           <div className="flex items-center gap-2 text-xs font-bold text-blue-700 uppercase tracking-widest mb-2">
             <Sparkles className="w-4 h-4 text-amber-500" />
             <span>Program Penjualan Spesial</span>
@@ -41,7 +42,7 @@ export const PromoSection: React.FC = () => {
         {/* 2-Column Split: 1 Universal Photo on Left + Universal Promo Details on Right */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-stretch mb-8">
           {/* Left Column: 1 Universal Promo Photo */}
-          <div className="lg:col-span-5 flex flex-col">
+          <div className="lg:col-span-5 flex flex-col scroll-reveal">
             <div className="relative rounded-2xl overflow-hidden border border-slate-200 shadow-sm bg-slate-950 flex-1 min-h-[300px] lg:min-h-full group">
               <img
                 src={promoUniversalImg}
@@ -90,7 +91,7 @@ export const PromoSection: React.FC = () => {
               return (
                 <div
                   key={idx}
-                  className="bg-white rounded-xl border border-slate-200 p-5 sm:p-6 shadow-xs hover:border-blue-400 transition-colors flex items-start gap-4"
+                  className="bg-white rounded-xl border border-slate-200 p-5 sm:p-6 shadow-xs hover:border-blue-400 transition-colors flex items-start gap-4 scroll-reveal promo-card"
                 >
                   <div className="w-10 h-10 rounded-lg bg-blue-50 text-blue-700 flex items-center justify-center shrink-0 mt-0.5 border border-blue-100">
                     <Icon className="w-5 h-5" />
