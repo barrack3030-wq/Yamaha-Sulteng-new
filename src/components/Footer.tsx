@@ -1,5 +1,5 @@
 import React from 'react';
-import { MessageSquareQuote, MapPin, Facebook, Phone, Clock, Shield } from 'lucide-react';
+import { MapPin, Facebook, Phone } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   return (
@@ -130,30 +130,6 @@ export const Footer: React.FC = () => {
             </ul>
           </div>
 
-          {/* Column 4: WhatsApp Direct Card */}
-          <div className="lg:col-span-3 bg-slate-900/90 rounded-xl p-5 border border-slate-800 space-y-4">
-            <div>
-              <span className="text-[11px] font-semibold text-blue-400 uppercase tracking-wider block">
-                Konsultasi WhatsApp
-              </span>
-              <h5 className="text-sm font-bold text-white mt-0.5">
-                Mas Aji (0858 2083 0530)
-              </h5>
-              <p className="text-xs text-slate-400 mt-1">
-                Tanyakan simulasi uang muka, cicilan, dan ketersediaan warna motor hari ini.
-              </p>
-            </div>
-
-            <a
-              href="https://wa.me/6285820830530?text=Halo%20Mas%20Aji,%20saya%20ingin%20konsultasi%20pembelian%20motor%20Yamaha."
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full inline-flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-semibold text-white bg-blue-600 hover:bg-blue-700 active:bg-blue-800 rounded-lg transition-colors"
-            >
-              <MessageSquareQuote className="w-4 h-4" />
-              <span>Buka WhatsApp Sekarang</span>
-            </a>
-          </div>
         </div>
 
         {/* Disclaimer & Transparency Bar */}
