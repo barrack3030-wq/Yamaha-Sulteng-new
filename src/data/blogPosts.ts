@@ -18,6 +18,24 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    id: 'blog-8',
+    slug: 'yamaha-wr155r-toili',
+    title: 'Yamaha WR155R di Toili: Fitur, Ergonomi, dan Hal yang Perlu Dipertimbangkan',
+    category: 'Panduan Model',
+    date: '6 November 2026',
+    readTime: '5 menit baca',
+    targetRegion: 'Toili',
+    author: 'Mas Aji',
+    publishedAt: '2026-11-06',
+    updatedAt: '2026-11-06',
+    primaryKeyword: 'Yamaha WR155R Toili',
+    featuredImage: 'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/2026012216212651507H98695.png',
+    imageAlt: 'Yamaha WR155R warna hitam dengan rangka dan grafis beraksen warna, foto produk resmi Yamaha Indonesia',
+    imageCredit: 'Yamaha Motor Indonesia',
+    excerpt: 'Kenali karakter dual purpose WR155R, spesifikasi utama, transmisi manual, tinggi jok, dan hal yang perlu dicoba sebelum memilih motor di Toili.'
+  },
+
+  {
     id: 'blog-7',
     slug: 'aplikasi-yamaha-y-on-morowali',
     title: 'Yamaha Y-ON di Morowali: Fitur Pengingat Servis dan Cara Memantau Motor',
