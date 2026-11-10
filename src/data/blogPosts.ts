@@ -18,6 +18,23 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    id: 'blog-9',
+    slug: 'yamaha-mio-m3-morowali-checklist',
+    title: 'Yamaha Mio M3 di Morowali: 7 Hal yang Perlu Diperiksa Sebelum Membeli',
+    category: 'Panduan Model',
+    date: '10 November 2026',
+    readTime: '5 menit baca',
+    targetRegion: 'Morowali',
+    author: 'Mas Aji',
+    publishedAt: '2026-11-10',
+    updatedAt: '2026-11-10',
+    primaryKeyword: 'Yamaha Mio M3 Morowali',
+    featuredImage: 'https://www.yamaha-motor.co.id/uploads/content/2025052008383446597E98490.jpg',
+    imageAlt: 'Yamaha Mio M3 125 dengan warna dan grafis terbaru, foto resmi Yamaha Indonesia',
+    imageCredit: 'Yamaha Motor Indonesia',
+    excerpt: 'Kenali fitur, spesifikasi resmi, ergonomi, dan tujuh hal yang perlu diperiksa sebelum memilih Yamaha Mio M3 untuk kebutuhan harian di Morowali.'
+  },
+  {
     id: 'blog-8',
     slug: 'yamaha-wr155r-toili',
     title: 'Yamaha WR155R di Toili: Fitur, Ergonomi, dan Hal yang Perlu Dipertimbangkan',
