@@ -18,6 +18,24 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    id: 'blog-10',
+    slug: 'setelah-beli-motor-yamaha-baru-checklist-toili-luwuk-morowali',
+    title: 'Baru Beli Motor Yamaha? 7 Hal yang Perlu Dicek Setelah Serah Terima',
+    category: 'Panduan Pembelian',
+    date: '12 November 2026',
+    readTime: '5 menit baca',
+    targetRegion: 'Sulawesi Tengah',
+    author: 'Mas Aji',
+    publishedAt: '2026-11-12',
+    updatedAt: '2026-11-12',
+    primaryKeyword: 'motor Yamaha baru Toili',
+    featuredImage: 'https://yamahasulteng.web.id/assets/og-yamaha-sulteng.jpg',
+    imageAlt: 'Ilustrasi motor Yamaha untuk pembeli baru di Sulawesi Tengah',
+    imageCredit: 'Yamaha Sulteng',
+    excerpt: 'Checklist dokumen, kondisi unit, garansi, KSG, aplikasi My Yamaha Motor, dan jadwal servis pertama untuk pembeli di Toili, Luwuk, dan Morowali.'
+  },
+
+  {
     id: 'blog-9',
     slug: 'yamaha-mio-m3-morowali-checklist',
     title: 'Yamaha Mio M3 di Morowali: 7 Hal yang Perlu Diperiksa Sebelum Membeli',
