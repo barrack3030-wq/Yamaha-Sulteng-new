@@ -1,101 +1,174 @@
-import React from 'react';
-import { MessageSquareQuote, ShieldCheck, Truck, FileText, ArrowUpRight } from 'lucide-react';
+import React, { useEffect, useRef } from 'react';
+import { MessageSquareQuote, ShieldCheck, Truck, FileText, ArrowUpRight, MapPin, Sparkles } from 'lucide-react';
 import { MOTORCYCLES } from '../data/motorcycles';
 import { ScrollReveal } from './ScrollReveal';
 
 const showcase = MOTORCYCLES.filter((motor) => motor.image).slice(0, 4);
 
+const features = [
+  { icon: Truck, title: 'Pengantaran Unit', desc: 'Jangkauan layanan Toili, Luwuk, dan Morowali.' },
+  { icon: ShieldCheck, title: 'Informasi Transparan', desc: 'Konfirmasi harga, promo, dan biaya sebelum transaksi.' },
+  { icon: FileText, title: 'Bantuan Pengajuan', desc: 'Pendampingan proses pembelian dan kredit.' },
+  { icon: MessageSquareQuote, title: 'Konsultasi Personal', desc: 'Tanyakan warna, stok, DP, dan angsuran via WhatsApp.' },
+];
+
 export const Hero: React.FC = () => {
   const items = [...showcase, ...showcase];
+  const sectionRef = useRef<HTMLElement>(null);
+  const tiltRef = useRef<HTMLDivElement>(null);
+
+  // Efek interaktif hanya dipasang di klien (setelah hydrate) agar aman untuk prerender.
+  useEffect(() => {
+    const section = sectionRef.current;
+    const tilt = tiltRef.current;
+    if (!section || !tilt) return;
+    const canHover = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!canHover || reduce) return;
+
+    let frame = 0;
+    const onMove = (event: PointerEvent) => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        const rect = section.getBoundingClientRect();
+        const px = (event.clientX - rect.left) / rect.width - 0.5;
+        const py = (event.clientY - rect.top) / rect.height - 0.5;
+        tilt.style.setProperty('--rx', `${(-py * 7).toFixed(2)}deg`);
+        tilt.style.setProperty('--ry', `${(px * 9).toFixed(2)}deg`);
+        section.style.setProperty('--mx', `${((px + 0.5) * 100).toFixed(1)}%`);
+        section.style.setProperty('--my', `${((py + 0.5) * 100).toFixed(1)}%`);
+      });
+    };
+    const onLeave = () => {
+      tilt.style.setProperty('--rx', '0deg');
+      tilt.style.setProperty('--ry', '0deg');
+    };
+    section.addEventListener('pointermove', onMove);
+    section.addEventListener('pointerleave', onLeave);
+    return () => {
+      cancelAnimationFrame(frame);
+      section.removeEventListener('pointermove', onMove);
+      section.removeEventListener('pointerleave', onLeave);
+    };
+  }, []);
 
   return (
-    <section id="beranda" className="relative overflow-hidden bg-white pt-12 pb-12 sm:pt-16 sm:pb-16">
-      <div className="absolute inset-x-0 top-0 h-[440px] bg-gradient-to-br from-blue-50 via-white to-white pointer-events-none" />
+    <section ref={sectionRef} id="beranda" className="hero-premium relative isolate overflow-hidden bg-[#040a1c] text-white pt-12 pb-14 sm:pt-20 sm:pb-20">
+      {/* Latar: aurora, grid, dan sorotan mengikuti kursor */}
+      <div aria-hidden="true" className="hero-aurora absolute inset-0 -z-10 pointer-events-none">
+        <span className="hero-blob hero-blob-a" />
+        <span className="hero-blob hero-blob-b" />
+        <span className="hero-blob hero-blob-c" />
+      </div>
+      <div aria-hidden="true" className="hero-grid absolute inset-0 -z-10 pointer-events-none" />
+      <div aria-hidden="true" className="hero-spotlight absolute inset-0 -z-10 pointer-events-none" />
+      <div aria-hidden="true" className="absolute inset-x-0 bottom-0 h-32 -z-10 bg-gradient-to-t from-[#040a1c] to-transparent pointer-events-none" />
+
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-9 lg:gap-12 items-center">
-          <div className="lg:col-span-7 space-y-6 text-center home-reveal">
-            <div className="home-reveal-item inline-flex items-center justify-center gap-2 text-[11px] font-bold text-blue-800 tracking-[.2em] uppercase">
-              <span className="w-7 h-px bg-blue-700" />
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+          <div className="lg:col-span-7 space-y-7 text-center lg:text-left home-reveal">
+            <div className="home-reveal-item inline-flex items-center gap-2.5 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-[11px] font-semibold text-blue-100 tracking-[.18em] uppercase backdrop-blur">
+              <span className="hero-dot relative flex h-2 w-2"><span className="hero-dot-ping absolute inline-flex h-full w-full rounded-full bg-red-500" /><span className="relative inline-flex h-2 w-2 rounded-full bg-red-500" /></span>
               Yamaha Motor · Sulawesi Tengah
             </div>
-            <h1 className="home-reveal-item home-title mx-auto max-w-3xl text-[2.35rem] sm:text-5xl lg:text-[3.65rem] font-extrabold text-slate-950 tracking-[-.045em] leading-[1.08] text-balance">
-              Temukan Motor Yamaha yang <span className="text-blue-700">Sesuai Gaya Anda.</span>
+
+            <h1 className="home-reveal-item home-title mx-auto lg:mx-0 max-w-3xl text-[2.4rem] sm:text-6xl lg:text-[4.1rem] font-extrabold text-white tracking-[-.045em] leading-[1.05] text-balance">
+              Temukan Motor Yamaha yang <span className="hero-gradient-text">Sesuai Gaya Anda.</span>
             </h1>
-            <p className="home-reveal-item mx-auto max-w-xl text-sm sm:text-base text-slate-600 leading-relaxed text-center">
+
+            <p className="home-reveal-item mx-auto lg:mx-0 max-w-xl text-sm sm:text-lg text-slate-300 leading-relaxed">
               Temukan motor yang cocok, lalu konsultasikan harga, promo, dan pilihan kredit bersama Mas Aji.
             </p>
-            <div className="home-reveal-item flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 pt-1">
-              <a href="https://wa.me/6285820830530?text=Halo%20Mas%20Aji%2C%20saya%20ingin%20konsultasi%20pilihan%20motor%20Yamaha." target="_blank" rel="noopener noreferrer" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-bold text-white bg-blue-700 hover:bg-blue-800 rounded-md shadow-lg shadow-blue-900/15 transition-all hover:-translate-y-0.5">
+
+            <div className="home-reveal-item flex flex-col sm:flex-row items-stretch sm:items-center justify-center lg:justify-start gap-3.5 pt-1">
+              <a href="https://wa.me/6285820830530?text=Halo%20Mas%20Aji%2C%20saya%20ingin%20konsultasi%20pilihan%20motor%20Yamaha." target="_blank" rel="noopener noreferrer" className="hero-cta group relative inline-flex items-center justify-center gap-2 overflow-hidden px-7 py-4 text-sm font-bold text-white rounded-full bg-gradient-to-r from-blue-600 to-blue-500 shadow-[0_10px_40px_-8px_rgba(37,99,235,.8)] transition-all duration-300 hover:-translate-y-0.5 hover:shadow-[0_16px_50px_-8px_rgba(59,130,246,.9)]">
                 <MessageSquareQuote className="w-4 h-4" /> Konsultasi dengan Mas Aji
               </a>
-              <a href="#pilihan-motor" className="inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold text-slate-700 hover:text-blue-700 border border-slate-300 hover:border-blue-300 rounded-md transition-colors">
-                Jelajahi Katalog <ArrowUpRight className="w-4 h-4" />
+              <a href="#pilihan-motor" className="group inline-flex items-center justify-center gap-2 px-7 py-4 text-sm font-semibold text-white rounded-full border border-white/20 bg-white/5 backdrop-blur hover:bg-white/10 hover:border-white/40 transition-all duration-300">
+                Jelajahi Katalog <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
             </div>
-            <div className="flex flex-wrap items-center gap-x-5 gap-y-2 pt-1 text-xs text-slate-500">
-              <span className="font-semibold text-slate-800">Mas Aji · Sales Consultant</span>
-              <span className="hidden sm:inline text-slate-300">|</span>
-              <span>Toili · Luwuk · Morowali</span>
-              <span className="hidden sm:inline text-slate-300">|</span>
-              <a href="tel:085820830530" className="font-semibold text-blue-700 hover:underline">0858-2083-0530</a>
+
+            <div className="home-reveal-item flex flex-wrap items-center justify-center lg:justify-start gap-x-5 gap-y-2 pt-1 text-xs text-slate-400">
+              <span className="font-semibold text-white">Mas Aji · Sales Consultant</span>
+              <span className="hidden sm:inline text-white/20">|</span>
+              <span className="inline-flex items-center gap-1.5"><MapPin className="w-3.5 h-3.5 text-blue-400" /> Toili · Luwuk · Morowali</span>
+              <span className="hidden sm:inline text-white/20">|</span>
+              <a href="tel:085820830530" className="font-semibold text-blue-300 hover:text-white transition-colors">0858-2083-0530</a>
             </div>
           </div>
 
           <div className="lg:col-span-5 relative home-visual-reveal">
-            <div className="relative min-h-[270px] sm:min-h-[350px] rounded-2xl bg-slate-950 overflow-hidden shadow-2xl shadow-blue-950/15">
-              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_70%_30%,rgba(37,99,235,.65),transparent_55%),linear-gradient(145deg,#0f172a,#172554_65%,#020617)]" />
-              <div className="absolute -right-12 -top-16 w-64 h-64 rounded-full border border-white/10" />
-              <div className="absolute -right-2 -top-6 w-44 h-44 rounded-full border border-white/10" />
-              <div className="relative z-10 flex flex-col justify-between min-h-[270px] sm:min-h-[350px] p-6 sm:p-8">
-                <div className="flex items-center justify-between text-[10px] font-bold uppercase tracking-[.22em] text-blue-200">
-                  <span>Move with confidence</span>
-                  <span className="text-white/50">Yamaha Sulteng</span>
+            <div ref={tiltRef} className="hero-tilt relative">
+              {/* Cincin dekoratif berputar */}
+              <div aria-hidden="true" className="hero-ring hero-ring-a" />
+              <div aria-hidden="true" className="hero-ring hero-ring-b" />
+
+              <div className="hero-float relative overflow-hidden rounded-[28px] border border-white/15 bg-slate-950 shadow-[0_40px_90px_-30px_rgba(37,99,235,.55)]">
+                <img src={showcase[0]?.image} alt="Pilihan motor Yamaha NMAX" width={620} height={420} fetchPriority="high" className="hero-photo block w-full h-[300px] sm:h-[420px] object-cover" />
+                <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-[#040a1c] via-[#040a1c]/25 to-transparent" />
+                <div aria-hidden="true" className="hero-sheen absolute inset-0" />
+                <div className="absolute inset-x-0 top-0 flex items-center justify-between p-5 text-[10px] font-bold uppercase tracking-[.22em] text-white/80">
+                  <span className="rounded-full bg-black/35 px-3 py-1 backdrop-blur">Move with confidence</span>
+                  <span className="hidden sm:inline text-white/55">Yamaha Sulteng</span>
                 </div>
-                <div className="flex justify-center items-center py-3 hero-parallax-frame">
-                  <img src={showcase[0]?.image} alt="Pilihan motor Yamaha NMAX" width={620} height={420} fetchPriority="high" className="hero-parallax-image w-full max-h-56 sm:max-h-64 object-contain drop-shadow-[0_22px_28px_rgba(0,0,0,.35)]" />
-                </div>
-                <div className="flex items-end justify-between gap-4">
+                <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-5 sm:p-7">
                   <div>
-                    <p className="text-xs text-blue-200 font-semibold uppercase tracking-widest">Pilihan unggulan</p>
-                    <p className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">Ride Your Way.</p>
+                    <p className="text-[11px] text-blue-300 font-semibold uppercase tracking-[.2em]">Pilihan unggulan</p>
+                    <p className="font-display text-3xl sm:text-4xl font-extrabold text-white tracking-tight">Ride Your Way.</p>
                     <p className="text-xs text-slate-300 mt-1">Temukan model yang cocok untuk Anda.</p>
                   </div>
-                  <a href="#pilihan-motor" aria-label="Lihat katalog motor" className="w-11 h-11 shrink-0 rounded-full bg-white text-blue-800 flex items-center justify-center hover:bg-blue-100 transition-colors"><ArrowUpRight className="w-5 h-5" /></a>
+                  <a href="#pilihan-motor" aria-label="Lihat katalog motor" className="group w-12 h-12 shrink-0 rounded-full bg-white text-blue-800 flex items-center justify-center hover:bg-blue-600 hover:text-white transition-all duration-300 hover:scale-110"><ArrowUpRight className="w-5 h-5 transition-transform duration-300 group-hover:rotate-45" /></a>
                 </div>
+              </div>
+
+              {/* Chip melayang */}
+              <div className="hero-chip hero-chip-a hidden sm:flex items-center gap-2.5 rounded-2xl border border-white/15 bg-slate-900/70 px-4 py-3 backdrop-blur-xl shadow-xl">
+                <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-blue-600/90"><Sparkles className="w-4 h-4" /></span>
+                <span className="leading-tight"><span className="block text-[10px] uppercase tracking-widest text-slate-400">Model</span><span className="block text-sm font-bold">{MOTORCYCLES.length}+ pilihan</span></span>
+              </div>
+              <div className="hero-chip hero-chip-b hidden sm:flex items-center gap-2.5 rounded-2xl border border-white/15 bg-slate-900/70 px-4 py-3 backdrop-blur-xl shadow-xl">
+                <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-red-500/90"><MapPin className="w-4 h-4" /></span>
+                <span className="leading-tight"><span className="block text-[10px] uppercase tracking-widest text-slate-400">Area layanan</span><span className="block text-sm font-bold">Toili · Luwuk · Morowali</span></span>
               </div>
             </div>
           </div>
         </div>
 
-        <ScrollReveal className="mt-14 sm:mt-16">
-          <div className="flex items-end justify-between gap-4 mb-5">
+        <ScrollReveal className="mt-16 sm:mt-24">
+          <div className="flex items-end justify-between gap-4 mb-6">
             <div>
-              <p className="text-[10px] font-bold uppercase tracking-[.22em] text-blue-700">Explore the lineup</p>
-              <h2 className="text-lg sm:text-xl font-bold text-slate-950 mt-1">Kenali lini motor Yamaha</h2>
+              <p className="text-[10px] font-bold uppercase tracking-[.24em] text-blue-400">Explore the lineup</p>
+              <h2 className="text-xl sm:text-2xl font-bold text-white mt-1.5">Kenali lini motor Yamaha</h2>
             </div>
-            <span className="hidden sm:block text-xs text-slate-400">Pilihan bergerak · Geser untuk melihat</span>
+            <span className="hidden sm:block text-xs text-slate-500">Pilihan bergerak · Arahkan kursor untuk berhenti</span>
           </div>
-          <div className="product-marquee relative overflow-hidden" aria-label="Galeri motor Yamaha bergerak">
+          <div className="product-marquee product-marquee-dark relative overflow-hidden" aria-label="Galeri motor Yamaha bergerak">
             <div className="product-marquee-track flex w-max gap-4 sm:gap-5">
               {items.map((motor, index) => (
-                <a href="#pilihan-motor" key={motor.id + '-' + index} className="group flex flex-col w-[220px] sm:w-[270px] h-[190px] sm:h-[215px] shrink-0 overflow-hidden rounded-xl border border-slate-200 bg-white hover:border-blue-300 hover:shadow-lg hover:shadow-blue-950/5 transition-all duration-500">
-                  <img src={motor.image} alt={'Yamaha ' + motor.name} loading="lazy" width={600} height={420} className="w-full h-[145px] sm:h-[165px] object-contain p-4 transition-transform duration-700 group-hover:scale-[1.06]" />
-                  <div className="mt-auto px-4 pb-3 pt-1 text-left">
-                    <p className="text-[10px] text-blue-700 font-bold uppercase tracking-widest">{motor.series}</p>
-                    <p className="text-sm font-bold text-slate-900">{motor.name.replace('Yamaha ', '').split(' ').slice(0, 3).join(' ')}</p>
+                <a href="#pilihan-motor" key={motor.id + '-' + index} className="hero-card group relative flex flex-col w-[220px] sm:w-[270px] h-[200px] sm:h-[230px] shrink-0 overflow-hidden rounded-2xl border border-white/10 bg-white/[.04] backdrop-blur transition-all duration-500 hover:border-blue-400/50 hover:bg-white/[.08] hover:-translate-y-1">
+                  <div className="relative h-[140px] sm:h-[165px] overflow-hidden">
+                    <img src={motor.image} alt={'Yamaha ' + motor.name} loading="lazy" width={600} height={420} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
+                    <div aria-hidden="true" className="absolute inset-0 bg-gradient-to-t from-[#0a1230] to-transparent opacity-80" />
+                  </div>
+                  <div className="mt-auto px-4 pb-3 pt-2 text-left">
+                    <p className="text-[10px] text-blue-300 font-bold uppercase tracking-widest">{motor.series}</p>
+                    <p className="text-sm font-bold text-white">{motor.name.replace('Yamaha ', '').split(' ').slice(0, 3).join(' ')}</p>
                   </div>
                 </a>
               ))}
             </div>
           </div>
-          <p className="text-[11px] text-slate-400 mt-3 sm:hidden">Galeri motor bergerak otomatis. Pilih katalog untuk melihat detail model.</p>
+          <p className="text-[11px] text-slate-500 mt-3 sm:hidden">Galeri motor bergerak otomatis. Pilih katalog untuk melihat detail model.</p>
         </ScrollReveal>
 
-        <ScrollReveal className="mt-12 pt-8 border-t border-slate-200 grid grid-cols-2 md:grid-cols-4 gap-6 home-features">
-          <div className="home-feature flex items-start gap-3"><div className="p-2.5 rounded-lg bg-blue-50 text-blue-700 shrink-0"><Truck className="w-5 h-5" /></div><div><h2 className="text-sm font-semibold text-slate-900">Pengantaran Unit</h2><p className="text-xs text-slate-500 mt-0.5">Jangkauan layanan Toili, Luwuk, dan Morowali.</p></div></div>
-          <div className="home-feature flex items-start gap-3"><div className="p-2.5 rounded-lg bg-blue-50 text-blue-700 shrink-0"><ShieldCheck className="w-5 h-5" /></div><div><h2 className="text-sm font-semibold text-slate-900">Informasi Transparan</h2><p className="text-xs text-slate-500 mt-0.5">Konfirmasi harga, promo, dan biaya sebelum transaksi.</p></div></div>
-          <div className="home-feature flex items-start gap-3"><div className="p-2.5 rounded-lg bg-blue-50 text-blue-700 shrink-0"><FileText className="w-5 h-5" /></div><div><h2 className="text-sm font-semibold text-slate-900">Bantuan Pengajuan</h2><p className="text-xs text-slate-500 mt-0.5">Pendampingan proses pembelian dan kredit.</p></div></div>
-          <div className="home-feature flex items-start gap-3"><div className="p-2.5 rounded-lg bg-blue-50 text-blue-700 shrink-0"><MessageSquareQuote className="w-5 h-5" /></div><div><h2 className="text-sm font-semibold text-slate-900">Konsultasi Personal</h2><p className="text-xs text-slate-500 mt-0.5">Tanyakan warna, stok, DP, dan angsuran via WhatsApp.</p></div></div>
+        <ScrollReveal className="mt-14 pt-10 border-t border-white/10 grid grid-cols-2 md:grid-cols-4 gap-5 home-features">
+          {features.map(({ icon: Icon, title, desc }) => (
+            <div key={title} className="home-feature group flex flex-col sm:flex-row items-start gap-3.5 rounded-2xl border border-white/10 bg-white/[.03] p-4 backdrop-blur transition-all duration-500 hover:border-blue-400/40 hover:bg-white/[.07] hover:-translate-y-1">
+              <div className="p-2.5 rounded-xl bg-blue-500/15 text-blue-300 shrink-0 ring-1 ring-blue-400/20"><Icon className="w-5 h-5" /></div>
+              <div><h2 className="text-sm font-semibold text-white">{title}</h2><p className="text-xs text-slate-400 mt-1 leading-relaxed">{desc}</p></div>
+            </div>
+          ))}
         </ScrollReveal>
       </div>
     </section>
