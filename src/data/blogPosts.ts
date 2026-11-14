@@ -18,6 +18,24 @@ export interface BlogPost {
 
 export const BLOG_POSTS: BlogPost[] = [
   {
+    id: 'blog-11',
+    slug: 'yamaha-nmax-turbo-yecvt-luwuk-sulteng',
+    title: 'Yamaha NMAX Turbo di Sulawesi Tengah: Memahami YECVT, Riding Mode, dan Y-Shift',
+    category: 'Panduan Model',
+    date: '14 November 2026',
+    readTime: '5 menit baca',
+    targetRegion: 'Sulawesi Tengah',
+    author: 'Mas Aji',
+    publishedAt: '2026-11-14',
+    updatedAt: '2026-11-14',
+    primaryKeyword: 'Yamaha NMAX Turbo Sulawesi Tengah',
+    featuredImage: 'https://www.yamaha-motor.co.id/uploads/products/new_product_model_image/20251110191903676F5433.png',
+    imageAlt: 'Yamaha NMAX Turbo warna abu-abu, foto produk resmi Yamaha Indonesia',
+    imageCredit: 'Yamaha Motor Indonesia',
+    excerpt: 'Kenali YECVT, T-Mode, S-Mode, dan Y-Shift, termasuk perbedaan fitur antarvarian NMAX sebelum membeli di Luwuk, Toili, dan Morowali.'
+  },
+
+  {
     id: 'blog-10',
     slug: 'setelah-beli-motor-yamaha-baru-checklist-toili-luwuk-morowali',
     title: 'Baru Beli Motor Yamaha? 7 Hal yang Perlu Dicek Setelah Serah Terima',
